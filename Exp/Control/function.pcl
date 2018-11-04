@@ -1,0 +1,122 @@
+#-------------------------- Data Record --------------------------
+int wrap_count = 0;
+sub record(string info)
+begin
+    out.open_append( "../Data/" + data_file_name );
+	 wrap_count = wrap_count + 1;
+	 if wrap_count%(headings.count()) != 0 then
+		out.print(info);
+		out.print(COMMA);
+	 else
+		out.print(info);
+		out.print(RETURN);
+	 end;
+   out.close();
+end;
+sub record_acc_rt
+begin
+	stimulus_data last_stim = stimulus_manager.last_stimulus_data();
+	if last_stim.type() == stimulus_hit then
+		record("1");
+		record(string(last_stim.reaction_time_double()));
+	elseif last_stim.type() == stimulus_incorrect then
+		record("0");
+		record(string(last_stim.reaction_time_double()));
+	else
+		record("missing");
+		record("missing");
+	end;
+end;
+
+#-------------------------- Relax Check --------------------------
+sub relax_check
+begin
+	term.print_line("count_relax = " + string(count_relax));
+	if count_relax == count_relax_limit && count_show_relax + 1 != a/count_relax_limit then
+		count_show_relax = count_show_relax + 1;
+		text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(a/count_relax_limit) +")", true);
+		trial_relax_instruct.present();
+		count_relax = 0;
+	end;
+end;
+#-------------------------- Show This --------------------------
+sub show_this(int which_one)
+	begin
+			loop int i = 1 until i > control_a.count()
+				begin
+					trial_fixation.present();
+					record(subj);
+					record(string(trial_mark));
+					trial_mark = trial_mark + 1;
+					record(string(control_a[i][2]));
+					record(string(control_a[i][3]));
+					record(string(control_a[i][4]));
+					# txr_ball = 150; txr_ball = 30;
+					if control_a[i][2] == 1 && control_a[i][3] == 1 && control_a[i][4] == 1 then
+							# Motion ＝ Fear; Sound = Increase; g = phase1;
+							event_mfsi_m.set_target_button(phase1);
+							ball.set_texture(txr_ball);
+							mfsi_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 1 && control_a[i][3] == 1 && control_a[i][4] == 2 then
+							# Motion ＝ Fear; Sound = Decrease; g = phase2;
+							event_mfsi_m.set_target_button(phase2);
+							ball.set_texture(txr_ball);
+							mfsi_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 1 && control_a[i][3] == 2 && control_a[i][4] == 1 then
+							# Motion ＝ Fear; Sound = Decrease; g = phase1;
+							event_mfsd_m.set_target_button(phase1);
+							ball.set_texture(txr_ball);
+							mfsd_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 1 && control_a[i][3] == 2 && control_a[i][4] == 2 then
+							# Motion ＝ Fear; Sound = Decrease; g = phase2;
+							event_mfsd_m.set_target_button(phase2);
+							ball.set_texture(txr_ball);
+							mfsd_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 2 && control_a[i][3] == 1 && control_a[i][4] == 1 then
+							# Motion ＝ Near; Sound = Increase; g = phase1;
+							event_mnsi_m.set_target_button(phase1);
+							ball.set_texture(txr_ball);
+							mnsi_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 2 && control_a[i][3] == 1 && control_a[i][4] == 2 then
+							# Motion ＝ Near; Sound = Increase; g = phase2;
+							event_mnsi_m.set_target_button(phase2);
+							ball.set_texture(txr_ball);
+							mnsi_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 2 && control_a[i][3] == 2 && control_a[i][4] == 1 then
+							# Motion ＝ Near; Sound = Decrease; g = phase1;
+							event_mnsd_m.set_target_button(phase1);
+							ball.set_texture(txr_ball);
+							mnsd_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					elseif control_a[i][2] == 2 && control_a[i][3] == 2 && control_a[i][4] == 2 then
+							# Motion ＝ Near; Sound = Decrease; g = phase2;
+							event_mnsd_m.set_target_button(phase2);
+							ball.set_texture(txr_ball);
+							mnsd_trial.present();
+							record_acc_rt();
+							count_relax = count_relax + 1;
+							relax_check();
+					end;															
+					i = i + 1;
+				end;
+		end;
