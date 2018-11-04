@@ -1,3 +1,5 @@
+#------------------------- Setting Fixation Duration --------------------------
+array <int> fix_duration[3] = { 400, 500, 600 };
 #-------------------------- Prepare to Record Data --------------------------
 string subj = logfile.subject();
 int trial_mark = 1;
@@ -52,12 +54,74 @@ end;
 int count_relax = 0; # 刺激呈现次数计数器
 double count_relax_limit = 10; # 休息条件
 int count_show_relax = 0; # 由于更新 relax 进度提醒信息
-#------------------------- Target Button Setting -----------
-int ans_gap = 1; 
-int ans_gapno = 2; 
-int ans_hor = 1; 
-int ans_ver = 2; 
 
+#--------------------------------------------------------------
+#                          Subj Plan
+#--------------------------------------------------------------
+int task_set = 0;
+if int(subj)-(int(subj)/2)* 2 == 0 then
+	int temp = int(subj);
+	task_set = temp/2 - ((temp/2)/4)*4;
+elseif int(subj)-(int(subj)/2)* 2 != 0 then
+	int temp = int(subj)+1;
+	if temp/2 - ((temp/2)/4)*4 != 0 then
+		task_set = temp/2 - ((temp/2)/4)*4;
+	else
+		task_set = 4;
+	end;
+	
+	#task_set = mod(1,4);
+end;
+# button
+# 1 = left
+# 2 = right 
+int ans_hor = 0; 
+int ans_ver = 0; 
+int ans_gap = 0; 
+int ans_gapno = 0; 
+
+string new_task_remind_caption_motion = "";
+string new_task_remind_caption_sound = "";
+	
+term.print_line("subj: " + subj);
+term.print_line("task_set: " + string(task_set));
+if task_set == 1 then
+	new_task_remind_caption_motion = "判断小球上纹理的朝向 \n\n 水平条纹 = 左手食指按键\n 垂直条纹 = 右手食指按键";
+	new_task_remind_caption_sound = "判断声音中有无间隔 \n\n 有间隔 = 左手食指按键\n 无间隔 = 右手食指按键";
+
+	ans_hor = 1; 
+	ans_ver = 2; 
+	ans_gap = 1; 
+	ans_gapno = 2; 
+	
+elseif task_set == 2 then
+	new_task_remind_caption_motion = "判断小球上纹理的朝向 \n\n 垂直条纹 = 左手食指按键\n 水平条纹 = 右手食指按键";
+	new_task_remind_caption_sound = "判断声音中有无间隔 \n\n 有间隔 = 左手食指按键\n 无间隔 = 右手食指按键";
+
+	ans_hor = 2; 
+	ans_ver = 1; 
+	ans_gap = 1; 
+	ans_gapno = 2; 
+	
+elseif task_set == 3 then
+	new_task_remind_caption_motion = "判断小球上纹理的朝向 \n\n 水平条纹 = 左手食指按键\n 垂直条纹 = 右手食指按键";
+	new_task_remind_caption_sound = "判断声音中有无间隔 \n\n 无间隔 = 左手食指按键\n 有间隔 = 右手食指按键";
+
+	ans_hor = 1; 
+	ans_ver = 2; 
+	ans_gap = 2; 
+	ans_gapno = 1; 
+	
+elseif task_set == 4 then
+	new_task_remind_caption_motion = "判断小球上纹理的朝向 \n\n 垂直条纹 = 左手食指按键\n 水平条纹 = 右手食指按键";
+	new_task_remind_caption_sound = "判断声音中有无间隔 \n\n 无间隔 = 左手食指按键\n 有间隔 = 右手食指按键";
+
+	ans_hor = 2; 
+	ans_ver = 1; 
+	ans_gap = 2; 
+	ans_gapno = 1; 
+	
+end;
 #------------------------- Function Part --------------------------
 include "./function.pcl";
 /*
@@ -71,20 +135,25 @@ string new_block_type_caption = "Temp Caption";
 string new_task_remind_caption = "Temp Caption";
 loop int i = 1 until i > TRIAL_TOTAL
 begin
-		if i==1 || mod(i,TRIAL_TOTAL) == 0 then
+		if i==1 || i == TRIAL_TOTAL/2 + 1 then
 				# new_block_type_caption = "任务 " + string(i);
 		new_block_type_caption = "内容";
 		if trial_list[i][1] == 1 then
-			new_task_remind_caption = "判断小球的上纹理的宽窄 \n\n 宽条纹 = 左手食指按键\n 窄条纹 = 右手食指按键";
+			new_task_remind_caption = new_task_remind_caption_motion;
+			text_remind_type.set_caption(new_block_type_caption, true);
+			text_remind_type.set_font_color(0,255,0);
+			text_remind_type.redraw();
+			text_remind_task.set_caption(new_task_remind_caption, true);
+			block_instruct_trial.present();
+		   block_instruct_show_trial.present();
 		elseif trial_list[i][1] == 2 then
-		   new_task_remind_caption = "判断音调变化类型 \n\n 升高 = 左手食指按键\n 降低 = 右手食指按键";
+		   new_task_remind_caption = new_task_remind_caption_sound;
+			text_remind_type.set_caption(new_block_type_caption, true);
+			text_remind_type.set_font_color(0,255,0);
+			text_remind_type.redraw();
+			text_remind_task.set_caption(new_task_remind_caption, true);
+			block_instruct_trial.present();
 		end;
-		text_remind_type.set_caption(new_block_type_caption, true);
-		text_remind_type.set_font_color(0,255,0);
-		text_remind_type.redraw();
-		text_remind_task.set_caption(new_task_remind_caption, true);
-		block_instruct_trial.present();
-		block_instruct_show_trial.present();
 	end;
 	show_this(i);
 	if mod(i,TRIAL_TOTAL) == 0 then

@@ -42,6 +42,7 @@ end;
 sub show_this(int this)
 begin
 	# fixation
+	trial_fixation_event.set_duration(fix_duration[random(1,3)]);
 	trial_fixation.present();
 	# recored subj info and trial info
 	record(subj);

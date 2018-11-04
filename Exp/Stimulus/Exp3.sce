@@ -1,6 +1,7 @@
     ################################################################################################
     #
     #                                   Exp 2: Indirect Task 
+    #                                   Exp 2: Indirect Task 
 	 #
     #                             Jinbo Zhang @ Sun Yat-sen University
     #                                     
@@ -10,7 +11,7 @@
     pcl_file = "../Control/main.pcl";
     no_logfile = false;
     #------------------------- View Setting --------------------
-    field_of_view = 37.167467; 
+    field_of_view = 37.167467;
     front_clip_distance = 90; 
     back_clip_distance = 350; 
     #------------------------- Response --------------------------
@@ -307,7 +308,7 @@
             };
             time = 0;
             code = "---fixation---";
-        };
+        }trial_fixation_event;
 
     } trial_fixation;
     #------------------------- Dynamic --------------------------

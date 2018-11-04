@@ -1,0 +1,7 @@
+Scenario - 
+Logfile written - 11/04/2018 23:41:07
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+1	1	Picture	!Start EXP	333	0	1	12335	1	0	next	other	0
+1	1	Quit		6683	6350	NA
