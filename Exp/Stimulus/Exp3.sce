@@ -17,10 +17,10 @@
     #------------------------- Response --------------------------
     response_matching = simple_matching;
     active_buttons = 4;
-    # 1 = J/RT 
-    # 2 = F/LT
-    # 3 = SPACE/START
-    # 4 = TAB/BACK
+    # 1 = LT 
+    # 2 = RT
+    # 3 = START
+    # 4 = BACK
     begin;
     #------------------------- Target Button Setting -----------
     $start = 3;
