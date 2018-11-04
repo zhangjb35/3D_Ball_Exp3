@@ -1,9 +1,9 @@
     ################################################################################################
     #
-    #                                   Exp 3  
-    #
-    #                                    K.B 
-    #
+    #                                   Exp 2: Indirect Task 
+	 #
+    #                             Jinbo Zhang @ Sun Yat-sen University
+    #                                     
     #
     ################################################################################################
     #------------------------- Header --------------------------
@@ -37,7 +37,7 @@
     $position_ball_far_z = 400;
     $position_fixation_z = -475;
     #------------------------- 确定可以呈现的 Frame 数量 --------------------------
-    $frame = 35; # 500 ms = 36 at 144 Hz and 3D Version Model
+    $frame = 35; # 500 ms = 36 frames at 144 Hz and 3D Version Model
     # －1 是为了去除第一格 Frame
     $interval = '1000/$refresh_rate';
     $count = 1;
@@ -116,7 +116,7 @@
             font_size = 96;
             font_color = 255,255,0;
         } text_task_remind_title;
-        x = 0; y = 250;
+        x = 0; y = 350;
         text {
             caption = " ";
             font_size = 24;
@@ -134,7 +134,7 @@
             font_size = 24;
             font_color = 255,255,255;
         }text_term_button;
-        x = 0; y = -250;
+        x = 0; y = -350;
     } pic_block_instruct;
     #------------------------- Start Instruct --------------------------
     picture {
@@ -143,7 +143,7 @@
             font_size = 96;
             font_color = 255,255,0;
         }txt_welcome;
-        x = 0; y = 250;
+        x = 0; y = 350;
       text {
             caption = "请始终注视白色十字";
             font_size = 24;
@@ -181,7 +181,7 @@
             font_size = 96;
             font_color = 255,255,0;
         } text_relax_remind;
-        x = 0; y = 250;
+        x = 0; y = 350;
         text {
             caption = "当前任务";
             font_size = 24;
@@ -197,7 +197,7 @@
             font_size = 24;
             font_color = 255,255,255;
         }relax_term_button;
-        x = 0; y = -250;
+        x = 0; y = -350;
     } pic_relax_instruct;
     #------------------------- Trial --------------------------
     #------------------------- Static --------------------------
@@ -362,10 +362,10 @@
             background_color =  0,0,0;
 
             sphere ball;
-            x = 0; y = 0; z = '$position_ball_z + 25 * $ball_abs_speed';
+            x = 0; y = 0; z = '$position_ball_z + 35 * $ball_abs_speed';
             light light_main;
         };
-        time = 'int(((25 + 1) - .5) * $interval)';
+        time = 'int(((35 + 1) - .5) * $interval)';
         stimulus_event{
             picture {
                 background_color = 0,0,0;
@@ -424,10 +424,10 @@
             background_color =  0,0,0;
 
             sphere ball;
-            x = 0; y = 0; z = '$position_ball_z + 25 * $ball_abs_speed';
+            x = 0; y = 0; z = '$position_ball_z + 35 * $ball_abs_speed';
             light light_main;
         };
-        time = 'int(((25 + 1) - .5) * $interval)';
+        time = 'int(((35 + 1) - .5) * $interval)';
         stimulus_event{
             picture {
                 background_color = 0,0,0;
@@ -435,6 +435,63 @@
             time = $duration_stimulus;
         };
     } mfsd_trial;
+	#------------------------- M-Far & S-No --------------------------
+trial {
+    trial_duration = $duration_present;
+    trial_type = fixed;
+    all_responses = false;
+
+    $position_ball_z = $position_ball_near_z;
+    
+    stimulus_event {
+        picture {
+            camera_position = 0.0, 0.0, $position_camera_z;
+            camera_lookat = 0.0, 0.0, 0.0; 
+            camera_up = 0.0, 1.0, 0.0; 
+
+            background_color = 0,0,0;
+
+            sphere ball;
+            x = 0; y = 0; z = $position_ball_z;
+
+            light light_main;
+        };
+        code = "mf";
+        time = 'int(.5 * $interval)';
+    } event_mf_m;
+    LOOP $i $frame;
+              picture {
+                    camera_position = 0.0, 0.0, $position_camera_z; 
+                    camera_lookat = 0.0, 0.0, 0.0;
+                    camera_up = 0.0, 1.0, 0.0; 
+
+                    background_color =  0,0,0;
+
+                    sphere ball;
+                    x = 0; y = 0; z = '$position_ball_z + $i * $ball_abs_speed';
+                    light light_main;
+              };
+              time = 'int((($i + 1) - .5) * $interval)';
+    ENDLOOP;
+		picture {
+		camera_position = 0.0, 0.0, $position_camera_z; 
+		camera_lookat = 0.0, 0.0, 0.0;
+		camera_up = 0.0, 1.0, 0.0; 
+
+		background_color =  0,0,0;
+
+		sphere ball;
+		x = 0; y = 0; z = '$position_ball_z + 35 * $ball_abs_speed';
+		light light_main;
+	};
+	time = 'int(((35 + 1) - .5) * $interval)';
+    stimulus_event{
+        picture {
+            background_color = 0,0,0;
+        };
+		time = $duration_stimulus;
+    };
+} mf_trial;
     #----------------------------------------- M-Near & S-Increase -------------------
     trial {
         trial_duration = $duration_present;
@@ -485,10 +542,10 @@
             background_color =  0,0,0;
 
             sphere ball;
-            x = 0; y = 0; z = '$position_ball_z - 25 * $ball_abs_speed';
+            x = 0; y = 0; z = '$position_ball_z - 35 * $ball_abs_speed';
             light light_main;
         };
-        time = 'int(((25 + 1) - .5) * $interval)';
+        time = 'int(((35 + 1) - .5) * $interval)';
         stimulus_event {
             picture {
                 background_color = 0,0,0;
@@ -558,3 +615,98 @@
             time = $duration_stimulus;
         } ;
 } mnsd_trial;
+#----------------------------------------- M-Near & S-No -------------------
+trial {
+    trial_duration = $duration_present;
+    trial_type = fixed;
+    all_responses = false;
+    
+    $position_ball_z = $position_ball_far_z;
+    stimulus_event {   
+        picture {
+            camera_position = 0.0, 0.0, $position_camera_z;
+            camera_lookat = 0.0, 0.0, 0.0; 
+            camera_up = 0.0, 1.0, 0.0; 
+
+            background_color = 0,0,0;
+
+            sphere ball;
+            x = 0; y = 0; z = $position_ball_z;
+
+            light light_main;
+        };
+        code = "mn";
+        time = 'int(.5 * $interval)';
+    } event_mn_m;
+
+    LOOP $i $frame;
+        picture {
+            camera_position = 0.0, 0.0, $position_camera_z; 
+            camera_lookat = 0.0, 0.0, 0.0;
+            camera_up = 0.0, 1.0, 0.0; 
+
+            background_color = 0,0,0;
+
+            sphere ball;
+            x = 0; y = 0; z = '$position_ball_z - $i * $ball_abs_speed';
+            light light_main;
+        };
+        time = 'int((($i + 1) - .5) * $interval)';
+   ENDLOOP;
+		picture {
+		camera_position = 0.0, 0.0, $position_camera_z; 
+		camera_lookat = 0.0, 0.0, 0.0;
+		camera_up = 0.0, 1.0, 0.0; 
+
+		background_color =  0,0,0;
+
+		sphere ball;
+		x = 0; y = 0; z = '$position_ball_z - 35 * $ball_abs_speed';
+		light light_main;
+	};
+	time = 'int(((35 + 1) - .5) * $interval)';
+    stimulus_event {
+        picture {
+            background_color = 0,0,0;
+        };
+		time = $duration_stimulus;
+    } ;
+} mn_trial;
+#------------------------- M-No & S-Increase --------------------------
+trial {
+    trial_duration = $duration_present;
+    trial_type = fixed;
+    all_responses = false;
+    
+    stimulus_event {
+        sound sound_increase;
+		  code = "si";
+        time = 0;
+    } event_si_s;
+    stimulus_event{
+        picture {
+            background_color = 0,0,0;
+        };
+		time = 0;
+    };
+} si_trial;
+#------------------------- M-No & S-Decrease --------------------------
+trial {
+    trial_duration = $duration_present;
+    trial_type = fixed;
+    all_responses = false;
+
+    $position_ball_z = $position_ball_far_z;
+    
+    stimulus_event {
+        sound sound_decrease;
+		  code = "sd";
+        time = 0;
+    } event_sd_s;
+    stimulus_event{
+        picture {
+            background_color = 0,0,0;
+        };
+		time = 0;
+    };
+} sd_trial;

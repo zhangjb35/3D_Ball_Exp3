@@ -44,13 +44,14 @@
 <dxv>8</dxv>
 <efs>
 <filename>D:\Exp02\3D_Ball_Exp3\Exp\Stimulus\Exp3.sce</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\ramp_sin_decrease_gap1.tif</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\ramp_sin_decrease_gap1.wav</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\ramp_sin_increase.wav</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\ramp_sin_increase_gap1.wav</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\hor.bmp</filename>
+<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\fixation.jpg</filename>
 <filename>D:\Exp02\3D_Ball_Exp3\Exp\Control\main.pcl</filename>
 <filename>D:\Exp02\3D_Ball_Exp3\Exp\Control\function.pcl</filename>
-<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\decrease.wav</filename>
-<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\fixation.jpg</filename>
-<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\grating_30.png</filename>
-<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\grating_150.png</filename>
-<filename>D:\Exp02\3D_Ball_Exp3\Exp\Media\increase.wav</filename>
 </efs>
 <exclusive_mouse>1</exclusive_mouse>
 <exp_version>1.1</exp_version>
@@ -406,17 +407,12 @@
 <device>
 <device_type>4</device_type>
 <dx_device_type>17</dx_device_type>
-<name>Broadcom Bluetooth Wireless  Keyboard                        </name>
+<name>USB KEYBOARD</name>
 </device>
 <device>
 <device_type>4</device_type>
 <dx_device_type>17</dx_device_type>
-<name>Broadcom Bluetooth Wireless  Keyboard                         1</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Broadcom Bluetooth Wireless  Keyboard                         2</name>
+<name>USB KEYBOARD 1</name>
 </device>
 <device>
 <axis>
@@ -571,7 +567,7 @@
 <halt_on_underrun>1</halt_on_underrun>
 <max_mix_length>50</max_mix_length>
 <min_mix_length>25</min_mix_length>
-<mixer>dx_software</mixer>
+<mixer>custom</mixer>
 <rewind_distance>10</rewind_distance>
 <sh_period>0</sh_period>
 <side_speakers>1</side_speakers>
@@ -583,7 +579,7 @@
 <show_term>1</show_term>
 <smc>2</smc>
 <smd>16</smd>
-<smr>48000</smr>
+<smr>44100</smr>
 <srs>1</srs>
 <sse>
 <s>
@@ -594,10 +590,10 @@
 </s>
 </sse>
 <svl>
-<attenuation>0.25</attenuation>
+<attenuation>0</attenuation>
 <do_attenuation>1</do_attenuation>
-<do_volume>0</do_volume>
-<volume>1</volume>
+<do_volume>1</do_volume>
+<volume>0.1</volume>
 </svl>
 <swp>1</swp>
 <text_encoding>utf8</text_encoding>

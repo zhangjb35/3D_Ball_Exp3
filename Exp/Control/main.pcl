@@ -1,3 +1,31 @@
+#-------------------------- Prepare to Record Data --------------------------
+string subj = logfile.subject();
+int trial_mark = 1;
+string COMMA = ",";
+string RETURN = "\n";
+string data_file_name = subj + "_data.csv";
+output_file out = new output_file;
+out.open("../Data/" + data_file_name);
+array<string> headings[8];
+headings[1] = "subject";
+headings[2] = "trial";
+headings[3] = "block_type";
+headings[4] = "main_task";
+headings[5] = "irr_stim";
+headings[6] = "indirect_task";
+headings[7] = "ACC";
+headings[8] = "RT";
+loop int i = 1 until i > headings.count()
+begin
+	if i != headings.count() then
+		out.print(headings[i] + COMMA);
+	elseif i == headings.count() then
+		out.print(headings[i]);
+	end;
+	i = i + 1;
+end;
+out.print(RETURN);
+out.close();
 #--------------------------------------------------------------
 #                          Present Setup
 #--------------------------------------------------------------
@@ -11,131 +39,25 @@ in.open( "./seq/seq.txt" );
 array<int> trial_list[TRIAL_TOTAL][PARA_TOTAL];
 int count = 0;
 loop until
-   in.end_of_file() || count == 720 || !in.last_succeeded()
+   in.end_of_file() || count == TRIAL_TOTAL || !in.last_succeeded()
 begin
    count = count + 1;
    trial_list[count][1] = in.get_int(); # block_type
    trial_list[count][2] = in.get_int(); # main_task
    trial_list[count][3] = in.get_int(); # irr_stim
    trial_list[count][4] = in.get_int(); # indirect_task
-   term.print_line("A = " + string(trial_list[count][1]) + ", B = " + string(trial_list[count][2]) + ", C = " + string(trial_list[count][3]) + ", D = " + string(trial_list[count][4]) + "\n");
 end;
 
-
-#------------------------- Setting Block Order --------------------------
-array <int> block_order[1] = {1};
-#------------------------- Prepare formal control array --------------------------
-int a = 240; # a must be the multiple of f1*f2*2=8
-int b = 0;
-int all = a + b;
-int f1 = 2;
-int f2 = 2;
-# a: main-motion; sub-sound; code = 1;
-# b: main-sound; sub-motion; code = 2;
-
-array <int> control_a_temp[f1*f2*2][4];
-array <int> tmp[f1*f2*2][4];
-array <int> control_a[a][4];
-array <int> control_b[b][3];
-
-
-# f1 = # main factor
-# f2 = # sub factor
-
-#------------------------- Prepare formal control array --------------------------
-#------------------------- Gene arary of A --------------------------
-loop int i = 1 until i > f1*f2*2
-begin
-	loop int j = 1 until j > f1
-	begin
-		loop int k = 1 until k > f2
-		begin
-		# term.print_line(string(i));
-		# term.print_line(string(j));
-		# term.print_line(string(k));
-		loop int g = 1 until g > 2
-		begin
-			# term.print_line(string(i));
-			control_a_temp[i][1] = 1;
-			control_a_temp[i][2] = j;
-			control_a_temp[i][3] = k;
-			control_a_temp[i][4] = g;
-			term.print_line(string(control_a_temp[i][1]) + " " +string(control_a[i][2]) + " " + string(control_a[i][3]) + " " + string(control_a[i][4]));
-			g = g + 1;
-			i = i + 1;
-		end;
-		k = k + 1;
-		end;
-		j = j + 1;
-	end;
-end;
-term.print_line(control_a_temp);
-term.print_line("control_a_templete = " + string(control_a_temp.count()));
-int copy_rate = a/(f1*f2*2);
-tmp.assign(control_a_temp);
-loop int cpr = 1 until cpr >= copy_rate
-begin
-	tmp.append(control_a_temp);
-	cpr = cpr + 1;
-end;
-control_a.assign(tmp);
-term.print_line("control_a = " + string(control_a.count()));
-control_a.shuffle();
-term.print_line(control_a);
-
-#------------------------- Gene arary of B --------------------------
-loop int i = 1 until i > b
-begin
-	loop int j = 1 until j > f1
-		begin
-			loop int k = 1 until k > f2
-				begin
-					control_b[i][1] = 2;
-					control_b[i][2] = j;
-					control_b[i][3] = k;
-					i = i + 1;
-					k = k + 1;
-				end;
-			j = j + 1;
-		end;
-end;
-control_b.shuffle();
-term.print_line("control_b = " + string(control_b.count()));
-term.print_line(control_b);
 #------------------------- Set Relax Interval --------------
 int count_relax = 0; # 刺激呈现次数计数器
-double count_relax_limit = 60; # 休息条件
+double count_relax_limit = 10; # 休息条件
 int count_show_relax = 0; # 由于更新 relax 进度提醒信息
 #------------------------- Target Button Setting -----------
-int phase1 = 1; # response phase1 窄 with f; 1 = f; 2 = j;
-int phase2 = 2; # response phase2 宽 with j;
-#-------------------------- Prepare to Record Data --------------------------
-string subj = logfile.subject();
-int trial_mark = 1;
-string COMMA = ",";
-string RETURN = "\n";
-string data_file_name = subj + "-data.csv";
-output_file out = new output_file;
-out.open("../Data/" + data_file_name);
-array<string> headings[7];
-headings[1] = "subject";
-headings[2] = "trial";
-headings[3] = "g_type";
-headings[4] = "v_stimulus";
-headings[5] = "a_stimulus";
-headings[6] = "ACC";
-headings[7] = "RT";
-loop int i = 1 until i > headings.count()
-begin
-	if i != headings.count() then
-		out.print(headings[i] + COMMA);
-	elseif i == headings.count() then
-		out.print(headings[i]);
-	end;
-	i = i + 1;
-end;
-out.print(RETURN);
-out.close();
+int ans_gap = 1; 
+int ans_gapno = 2; 
+int ans_hor = 1; 
+int ans_ver = 2; 
+
 #------------------------- Function Part --------------------------
 include "./function.pcl";
 /*
@@ -143,30 +65,30 @@ include "./function.pcl";
 	relax_check(); 检查是否需要休息
 */
 #------------------------- Show by Order --------------------------
-term.print_line("------Show by Block Order!!!------");
+count_relax = 0;
 trial_start_instruct.present();
 string new_block_type_caption = "Temp Caption";
 string new_task_remind_caption = "Temp Caption";
-loop int i = 1 until i > block_order.count()
-	begin
-		count_relax = 0;
-		# new_block_type_caption = "任务 " + string(i);
+loop int i = 1 until i > TRIAL_TOTAL
+begin
+		if i==1 || mod(i,TRIAL_TOTAL) == 0 then
+				# new_block_type_caption = "任务 " + string(i);
 		new_block_type_caption = "内容";
-		if block_order[i] == 1 then
+		if trial_list[i][1] == 1 then
 			new_task_remind_caption = "判断小球的上纹理的宽窄 \n\n 宽条纹 = 左手食指按键\n 窄条纹 = 右手食指按键";
-		# elseif block_order[i] == 2 then
-		#	new_task_remind_caption = "[DEBUG!]判断音调变化类型 \n\n 升高 = 左手食指按键\n 降低 = 右手食指按键";
+		elseif trial_list[i][1] == 2 then
+		   new_task_remind_caption = "判断音调变化类型 \n\n 升高 = 左手食指按键\n 降低 = 右手食指按键";
 		end;
-
 		text_remind_type.set_caption(new_block_type_caption, true);
 		text_remind_type.set_font_color(0,255,0);
 		text_remind_type.redraw();
 		text_remind_task.set_caption(new_task_remind_caption, true);
 		block_instruct_trial.present();
 		block_instruct_show_trial.present();
-		show_this(block_order[i]);
-		if i == block_order.count() then
-			trial_entire_end_instruct.present();
-		end;
-		i = i + 1;
 	end;
+	show_this(i);
+	if mod(i,TRIAL_TOTAL) == 0 then
+		trial_entire_end_instruct.present();
+	end;
+	i = i + 1;
+end;

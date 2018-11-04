@@ -27,96 +27,247 @@ begin
 		record("missing");
 	end;
 end;
-
 #-------------------------- Relax Check --------------------------
 sub relax_check
 begin
 	term.print_line("count_relax = " + string(count_relax));
-	if count_relax == count_relax_limit && count_show_relax + 1 != a/count_relax_limit then
+	if count_relax == count_relax_limit && count_show_relax + 1 != TRIAL_TOTAL/count_relax_limit then
 		count_show_relax = count_show_relax + 1;
-		text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(a/count_relax_limit) +")", true);
+		text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(TRIAL_TOTAL/count_relax_limit) +")", true);
 		trial_relax_instruct.present();
 		count_relax = 0;
 	end;
 end;
 #-------------------------- Show This --------------------------
-sub show_this(int which_one)
-	begin
-			loop int i = 1 until i > control_a.count()
-				begin
-					trial_fixation.present();
-					record(subj);
-					record(string(trial_mark));
-					trial_mark = trial_mark + 1;
-					record(string(control_a[i][2]));
-					record(string(control_a[i][3]));
-					record(string(control_a[i][4]));
-					# txr_ball = 150; txr_ball = 30;
-					if control_a[i][2] == 1 && control_a[i][3] == 1 && control_a[i][4] == 1 then
-							# Motion ＝ Fear; Sound = Increase; g = phase1;
-							event_mfsi_m.set_target_button(phase1);
-							ball.set_texture(txr_ball);
-							mfsi_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 1 && control_a[i][3] == 1 && control_a[i][4] == 2 then
-							# Motion ＝ Fear; Sound = Decrease; g = phase2;
-							event_mfsi_m.set_target_button(phase2);
-							ball.set_texture(txr_ball);
-							mfsi_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 1 && control_a[i][3] == 2 && control_a[i][4] == 1 then
-							# Motion ＝ Fear; Sound = Decrease; g = phase1;
-							event_mfsd_m.set_target_button(phase1);
-							ball.set_texture(txr_ball);
-							mfsd_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 1 && control_a[i][3] == 2 && control_a[i][4] == 2 then
-							# Motion ＝ Fear; Sound = Decrease; g = phase2;
-							event_mfsd_m.set_target_button(phase2);
-							ball.set_texture(txr_ball);
-							mfsd_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 2 && control_a[i][3] == 1 && control_a[i][4] == 1 then
-							# Motion ＝ Near; Sound = Increase; g = phase1;
-							event_mnsi_m.set_target_button(phase1);
-							ball.set_texture(txr_ball);
-							mnsi_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 2 && control_a[i][3] == 1 && control_a[i][4] == 2 then
-							# Motion ＝ Near; Sound = Increase; g = phase2;
-							event_mnsi_m.set_target_button(phase2);
-							ball.set_texture(txr_ball);
-							mnsi_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 2 && control_a[i][3] == 2 && control_a[i][4] == 1 then
-							# Motion ＝ Near; Sound = Decrease; g = phase1;
-							event_mnsd_m.set_target_button(phase1);
-							ball.set_texture(txr_ball);
-							mnsd_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					elseif control_a[i][2] == 2 && control_a[i][3] == 2 && control_a[i][4] == 2 then
-							# Motion ＝ Near; Sound = Decrease; g = phase2;
-							event_mnsd_m.set_target_button(phase2);
-							ball.set_texture(txr_ball);
-							mnsd_trial.present();
-							record_acc_rt();
-							count_relax = count_relax + 1;
-							relax_check();
-					end;															
-					i = i + 1;
-				end;
-		end;
+sub show_this(int this)
+begin
+	# fixation
+	trial_fixation.present();
+	# recored subj info and trial info
+	record(subj);
+	record(string(trial_mark));
+	trial_mark = trial_mark + 1;
+	
+	int block_type = trial_list[this][1];
+	int main_task_type = trial_list[this][2];
+	int irr_stim = trial_list[this][3];
+	int indirect_task_type = trial_list[this][4];
+	term.print_line("A = " + string(block_type) + ", B = " + string(main_task_type) + ", C = " + string(irr_stim) + ", D = " + string(indirect_task_type) + "\n");
+	record(string(block_type));
+	record(string(main_task_type));
+	record(string(irr_stim));
+	record(string(indirect_task_type));
+	
+	# main task = motion
+	# motion far
+	# sound decrease
+	if block_type == 1 && main_task_type == 1 && irr_stim == 1 && indirect_task_type == 1 then # hor
+		event_mfsd_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		event_mfsd_s.set_stimulus(sound_decrease);
+		mfsd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 1 && irr_stim == 1 && indirect_task_type == 2 then # ver
+		event_mfsd_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90.0);
+		event_mfsd_s.set_stimulus(sound_decrease);
+		mfsd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# sound increase
+	elseif block_type == 1 && main_task_type == 1 && irr_stim == 2 && indirect_task_type == 1 then # hor
+		event_mfsi_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		event_mfsi_s.set_stimulus(sound_increase);
+		mfsi_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 1 && irr_stim == 2 && indirect_task_type == 2 then # ver
+		event_mfsi_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90.0);
+		event_mfsi_s.set_stimulus(sound_increase);
+		mfsi_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# sound no	
+	elseif block_type == 1 && main_task_type == 1 && irr_stim == 3 && indirect_task_type == 1 then # hor
+		event_mf_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		mf_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 1 && irr_stim == 3 && indirect_task_type == 2 then # ver
+		event_mf_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90.0);
+		mf_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# motion near
+	# sound decrease
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 1 && indirect_task_type == 1 then # hor
+		event_mnsd_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		event_mnsd_s.set_stimulus(sound_decrease);
+		mnsd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 1 && indirect_task_type == 2 then # ver
+		event_mnsd_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90.0);
+		event_mnsd_s.set_stimulus(sound_decrease);
+		mnsd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# sound increase	
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 2 && indirect_task_type == 1 then # hor
+		event_mnsi_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		event_mnsi_s.set_stimulus(sound_increase);
+		mnsi_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 2 && indirect_task_type == 2 then # ver
+		event_mnsi_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90.0);
+		event_mnsi_s.set_stimulus(sound_increase);
+		mnsi_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# sound no	
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 3 && indirect_task_type == 1 then # hor
+		event_mn_m.set_target_button(ans_hor);
+		ball.rotate_mesh(0,0,0);
+		mn_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 1 && main_task_type == 2 && irr_stim == 3 && indirect_task_type == 2 then # ver
+		event_mn_m.set_target_button(ans_ver);
+		ball.rotate_mesh(0,0,90);
+		mn_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# main_task = sound
+   # sound decrease
+	# motion far
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 1 && indirect_task_type == 1 then # gap
+		event_mfsd_m.set_target_button(ans_gap);
+		event_mfsd_s.set_stimulus(sound_decrease);
+		ball.clear_texture();
+		mfsd_trial.present();
+		ball.set_texture(txr_ball,1); 
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 1 && indirect_task_type == 2 then # nogap
+		event_mfsd_m.set_target_button(ans_gapno);
+		event_mfsd_s.set_stimulus(sound_decrease);
+		ball.clear_texture();
+		mfsd_trial.present();
+		ball.set_texture(txr_ball,1); 
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# motion near
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 2 && indirect_task_type == 1 then # gap
+		ball.clear_texture();
+		event_mnsd_s.set_stimulus(sound_decrease_gap);
+		event_mnsd_m.set_target_button(ans_gap);
+		mnsd_trial.present();
+		ball.set_texture(txr_ball,1); 
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 2 && indirect_task_type == 2 then # nogap
+		event_mnsd_m.set_target_button(ans_gapno);
+		event_mnsd_s.set_stimulus(sound_decrease);
+		ball.clear_texture();
+		mnsd_trial.present();
+		ball.set_texture(txr_ball,1); 
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# motion no	
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 3 && indirect_task_type == 1 then # gap
+		event_sd_s.set_target_button(ans_gap);
+		event_sd_s.set_stimulus(sound_decrease_gap);
+		sd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 1 && irr_stim == 3 && indirect_task_type == 2 then # nogap
+		event_sd_s.set_target_button(ans_gapno);
+		event_sd_s.set_stimulus(sound_decrease);
+		sd_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+   # sound increase
+	# motion far
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 1 && indirect_task_type == 1 then # gap
+		event_mfsi_m.set_target_button(ans_gap);
+		event_mfsi_s.set_stimulus(sound_increase_gap);
+		ball.clear_texture();
+		mfsi_trial.present();
+		ball.set_texture(txr_ball,1); 
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 1 && indirect_task_type == 2 then # nogap
+		event_mfsi_m.set_target_button(ans_gapno);
+		ball.clear_texture();
+		event_mfsi_s.set_stimulus(sound_increase);
+		ball.set_texture(txr_ball,1); 
+		mfsi_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+   # motion near
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 2 && indirect_task_type == 1 then # gap
+		event_mnsi_m.set_target_button(ans_gap);
+		event_mnsi_s.set_stimulus(sound_increase_gap);
+		ball.clear_texture();
+		mnsi_trial.present();
+		ball.set_texture(txr_ball,1);
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 2 && indirect_task_type == 2 then # nogap
+		event_mnsi_m.set_target_button(ans_gapno);
+		event_mnsi_s.set_stimulus(sound_increase);
+		ball.clear_texture();
+		mnsi_trial.present();
+		ball.set_texture(txr_ball,1);
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	# motion no	
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 3 && indirect_task_type == 1 then # gap
+		ball.clear_texture();
+		event_si_s.set_target_button(ans_gap);
+		event_si_s.set_stimulus(sound_increase_gap);
+		si_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	elseif block_type == 2 && main_task_type == 2 && irr_stim == 3 && indirect_task_type == 2 then # nogap
+		event_si_s.set_target_button(ans_gapno);
+		event_si_s.set_stimulus(sound_increase);
+		si_trial.present();
+		record_acc_rt();
+		count_relax = count_relax + 1;
+		relax_check();
+	end;
+end;
