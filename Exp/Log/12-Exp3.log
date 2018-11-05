@@ -1,7 +1,42 @@
 Scenario - 
-Logfile written - 11/04/2018 23:41:37
+Logfile written - 11/05/2018 17:14:49
 
 Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
 
-12	1	Picture	!Start EXP	333	0	1	120712	1	0	next	other	0
-12	1	Quit		114688	114355	NA
+12	1	Picture	!Start EXP	13672	0	1	6336	1	0	next	other	0
+12	1	Response	3	19796	6123	0
+12	2	Response	3	21475	1467	0
+12	3	Picture	===Block Change===	21676	0	1	1167	1	0	next	other	0
+12	3	Response	3	22676	1000	0
+12	4	Picture	---fixation---	22843	0	1	4168	1	0	4000	other	0
+12	5	Sound	si	28460	0	1			0		incorrect	8
+12	5	Response	1	37556	9096	0
+12	7	Picture	---fixation---	69029	0	1	6003	1	0	6000	other	0
+12	8	Sound	si	74885	0	1			0		incorrect	11
+12	8	Response	2	90196	15311	0
+12	10	Picture	---fixation---	115382	0	1	4168	1	0	4000	other	0
+12	11	Picture	mfsd	121551	372	1	167	1	30	next	incorrect	14
+12	11	Response	2	139876	18697	0
+12	13	Picture	---fixation---	161735	0	1	4168	1	0	4000	other	0
+12	14	Picture	mfsd	167737	235	1	167	1	30	next	incorrect	17
+12	14	Response	1	175561	8058	0
+12	16	Picture	---fixation---	208088	0	1	6003	1	0	5000	other	0
+12	17	Sound	si	213958	0	1			0		hit	20
+12	17	Response	1	228756	14798	0
+12	19	Picture	---fixation---	254441	0	1	5836	1	0	6000	other	0
+12	20	Picture	mnsd	260610	256	1	167	1	30	next	hit	23
+12	20	Response	2	271556	11202	0
+12	22	Picture	---fixation---	300960	0	1	5836	1	0	6000	other	0
+12	23	Picture	mfsi	307130	249	1	167	1	30	next	miss	0
+12	24	Response	1	330756	3451	0
+12	25	Picture	---fixation---	347480	0	1	6003	1	0	5000	other	0
+12	26	Sound	sd	353336	0	1			0		incorrect	29
+12	26	Response	2	366196	12859	0
+12	28	Picture	---fixation---	394000	0	1	5836	1	0	6000	other	0
+12	29	Picture	mfsd	400169	234	1	167	1	30	next	incorrect	32
+12	29	Response	2	412356	12421	0
+12	31	Picture	---fixation---	440519	0	1	4168	1	0	4000	other	0
+12	32	Picture	mfsi	446522	263	1	167	1	30	next	incorrect	35
+12	32	Response	1	451956	5698	0
+12	33	Picture	+++relax+++	466697	0	1	66166	1	0	next	other	0
+12	33	Quit		528036	61339	NA

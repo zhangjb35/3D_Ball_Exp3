@@ -1,0 +1,89 @@
+Scenario - 
+Logfile written - 11/05/2018 17:17:45
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+01	1	Picture	!Start EXP	500	0	1	7003	1	0	next	other	0
+01	1	Response	3	7313	6813	0
+01	2	Response	3	12113	4610	0
+01	3	Picture	===Block Change===	12338	0	1	36682	1	0	next	other	0
+01	3	Response	3	48433	36095	0
+01	4	Response	3	62593	13573	0
+01	5	Picture	---fixation---	62693	0	1	5169	1	0	5000	other	0
+01	6	Picture	mfsd	69196	334	1	167	1	30	next	hit	9
+01	6	Response	1	78433	9572	0
+01	8	Picture	---fixation---	109379	0	1	6003	1	0	6000	other	0
+01	9	Picture	mfsi	115882	392	1	167	1	30	next	incorrect	12
+01	9	Response	2	122673	7183	0
+01	11	Picture	---fixation---	156066	0	1	6003	1	0	6000	other	0
+01	12	Picture	mnsd	162568	348	1	167	1	30	next	hit	15
+01	12	Response	1	171153	8933	0
+01	14	Picture	---fixation---	202752	0	1	6003	1	0	6000	other	0
+01	15	Picture	mnsi	209255	406	1	167	1	30	next	hit	18
+01	15	Response	1	218513	9664	0
+01	17	Picture	---fixation---	249438	0	1	4168	1	0	4000	other	0
+01	18	Picture	mn	255608	30	1	167	1	30	next	hit	21
+01	18	Response	2	264993	9416	0
+01	20	Picture	---fixation---	296125	0	1	6003	1	0	6000	other	0
+01	21	Picture	mf	302461	30	1	167	1	30	next	hit	24
+01	21	Response	1	310753	8322	0
+01	23	Picture	---fixation---	342978	0	1	6003	1	0	6000	other	0
+01	24	Picture	mf	349314	30	1	167	1	30	next	hit	27
+01	24	Response	1	355953	6670	0
+01	26	Picture	---fixation---	389831	0	1	6003	1	0	6000	other	0
+01	27	Picture	mn	396167	30	1	167	1	30	next	hit	30
+01	27	Response	2	402354	6217	0
+01	29	Picture	---fixation---	436684	0	1	6003	1	0	5000	other	0
+01	30	Picture	mnsd	443187	382	1	167	1	30	next	hit	33
+01	30	Response	1	449394	6589	0
+01	32	Picture	---fixation---	483370	0	1	4168	1	0	4000	other	0
+01	33	Picture	mn	489540	30	1	167	1	30	next	incorrect	36
+01	33	Response	2	495633	6124	0
+01	34	Picture	+++relax+++	509882	0	1	66695	1	0	next	other	0
+01	34	Response	3	569393	59512	0
+01	34	Response	4	576514	66632	0
+01	35	Picture	---fixation---	576576	0	1	6003	1	0	6000	other	0
+01	36	Picture	mf	582912	30	1	167	1	30	next	hit	42
+01	36	Response	2	593075	10192	0
+01	38	Picture	---fixation---	623430	0	1	6003	1	0	5000	other	0
+01	39	Picture	mfsi	629766	243	1	167	1	30	next	incorrect	45
+01	39	Response	2	638113	8591	0
+01	41	Picture	---fixation---	670116	0	1	6003	1	0	6000	other	0
+01	42	Picture	mfsd	676619	366	1	167	1	30	next	hit	48
+01	42	Response	2	684034	7781	0
+01	44	Picture	---fixation---	716802	0	1	6003	1	0	6000	other	0
+01	45	Picture	mnsi	723138	257	1	167	1	30	next	hit	51
+01	45	Response	2	729314	6433	0
+01	47	Picture	---fixation---	763489	0	1	5169	1	0	5000	other	0
+01	48	Picture	mfsi	769991	279	1	167	1	30	next	hit	54
+01	48	Response	2	775714	6001	0
+01	50	Picture	---fixation---	810175	0	1	6003	1	0	6000	other	0
+01	51	Picture	mnsd	816678	336	1	167	1	30	next	hit	57
+01	51	Response	2	823719	7378	0
+01	53	Picture	---fixation---	856861	0	1	6003	1	0	5000	other	0
+01	54	Picture	mnsi	863364	394	1	167	1	30	next	incorrect	60
+01	54	Response	2	869316	6346	0
+01	56	Picture	---fixation---	903548	0	1	6169	1	0	5000	other	0
+01	57	Picture	mnsd	910051	249	1	167	1	30	next	hit	63
+01	57	Response	2	915714	5912	0
+01	59	Picture	---fixation---	950401	0	1	6003	1	0	5000	other	0
+01	60	Picture	mfsi	956904	372	1	167	1	30	next	incorrect	66
+01	60	Response	1	962195	5663	0
+01	62	Picture	---fixation---	997087	0	1	6169	1	0	6000	other	0
+01	63	Picture	mfsi	1003757	393	1	167	1	30	next	hit	69
+01	63	Response	2	1008995	5631	0
+01	64	Picture	+++relax+++	1023765	0	1	56691	1	0	next	other	0
+01	64	Response	4	1080274	56509	0
+01	65	Picture	===Block Change===	1080456	0	1	31513	1	0	next	other	0
+01	65	Response	4	1106835	26379	0
+01	65	Response	3	1111875	31419	0
+01	66	Picture	---fixation---	1111969	0	1	5836	1	0	6000	other	0
+01	67	Picture	mfsi	1118138	184	1	167	1	30	next	incorrect	77
+01	67	Response	2	1122276	4321	0
+01	69	Picture	---fixation---	1158489	0	1	5836	1	0	5000	other	0
+01	70	Picture	mfsi	1164825	343	1	167	1	30	next	incorrect	80
+01	70	Response	2	1168515	4033	0
+01	72	Picture	---fixation---	1205008	0	1	4168	1	0	4000	other	0
+01	73	Sound	sd	1210937	0	1			0		incorrect	83
+01	73	Response	2	1212515	1578	0
+01	73	Quit		1219074	8137	NA

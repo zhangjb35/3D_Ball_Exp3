@@ -568,8 +568,8 @@
 <idv>
 <device_type>3</device_type>
 <dx_device_type>19</dx_device_type>
-<ibn>J</ibn>
 <ibn>F</ibn>
+<ibn>J</ibn>
 <ibn>Tab</ibn>
 <ibn>Space</ibn>
 <idn>Keyboard</idn>
@@ -581,8 +581,8 @@
 <label></label>
 <label></label>
 <label></label>
-<offset>36</offset>
 <offset>33</offset>
+<offset>36</offset>
 <offset>15</offset>
 <offset>57</offset>
 </idv>

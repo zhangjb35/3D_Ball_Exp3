@@ -1,0 +1,11 @@
+subject,trial,practice_index,block_type,main_task,irr_stim,indirect_task,button_label,button_pushed,ACC,RT
+12,1,1,2,2,3,2,ans_gapno,1,0,909.586
+12,2,1,2,2,3,1,ans_gap,2,0,1531.084
+12,3,1,2,1,1,1,ans_gap,2,0,1832.441
+12,4,1,2,1,1,2,ans_gapno,1,0,782.365
+12,5,1,2,2,3,1,ans_gap,1,1,1479.764
+12,6,1,2,1,2,2,ans_gapno,2,1,1094.631
+12,7,1,2,2,1,2,ans_gapno,0,missing,missing
+12,8,1,2,1,3,1,ans_gap,2,0,1285.948
+12,9,1,2,1,1,1,ans_gap,2,0,1218.749
+12,10,1,2,2,1,2,ans_gapno,1,0,543.471

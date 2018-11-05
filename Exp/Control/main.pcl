@@ -5,12 +5,15 @@
 ################################################################################################
 #------------------------- 注视点间隔随机化 --------------------------
 array <int> fix_duration[3] = { 400, 500, 600 };
-#------------------------- 刺激呈现参数汇总 --------------                    
+#------------------------- 刺激呈现参数汇总 --------------
+# 总试次数及参数规模设定                   
 int TRIAL_TOTAL = 720;
 int PARA_TOTAL = 4;
 # 定位正式实验序列
 input_file in = new input_file;
-in.open( "./seq/seq.txt" );
+string subj = logfile.subject();
+string seq_file = "./seq/subj_" + subj + ".txt";
+in.open(seq_file);
 
 # 加载正式实验序列
 array<int> trial_list[TRIAL_TOTAL][PARA_TOTAL];
@@ -24,7 +27,8 @@ begin
    trial_list[count][3] = in.get_int(); # irr_stim
    trial_list[count][4] = in.get_int(); # indirect_task
 end;
-# 抽取部分试次作为练习试次，前后分为两个主任务类型故分割成前后抽取
+
+# 抽取部分试次作为练习试次，前后分为两个主任务类型故分割成前后抽取；前后两半在组内自行随机
 int prac_times = 40;
 array<int> prac_trial_list_A[prac_times/2][PARA_TOTAL];
 array<int> prac_trial_list_B[prac_times/2][PARA_TOTAL];
@@ -40,6 +44,7 @@ begin
 	i = i + 1;
 end;
 prac_trial_list_A.shuffle();
+
 loop 
 	int i = 1
 until
@@ -52,18 +57,21 @@ begin
 	i = i + 1;
 end;
 prac_trial_list_B.shuffle();
+# 合并
 prac_trial_list_A.append(prac_trial_list_B);
+
+# 检阅
 term.print_line(prac_trial_list_A);
 
 #------------------------- 休息环节参数设定 --------------
-# 通用
+# 通用计数器
 int count_relax = 0; # 刺激呈现次数计数器
 
-# 练习时
+# 练习时计数器
 double p_count_relax_limit = 10; # 休息条件 practice part
 int p_count_show_relax = 0; # 更新 relax 进度提醒信息
 
-# 正式实验时
+# 正式实验时计数器
 double count_relax_limit = 10; # 休息条件
 int count_show_relax = 0; # 更新 relax 进度提醒信息
 ################################################################################################
@@ -72,7 +80,6 @@ int count_show_relax = 0; # 更新 relax 进度提醒信息
 #                                    
 ################################################################################################
 #-------------------------- 创建数据收集文件 --------------------------
-string subj = logfile.subject();
 int trial_mark = 1;
 string COMMA = ",";
 string RETURN = "\n";
@@ -117,9 +124,11 @@ elseif int(subj)-(int(subj)/2)* 2 != 0 then
 		task_set = 4;
 	end;
 	
-	#task_set = mod(1,4);
 end;
-# button
+# 指定按键与提示语
+string new_block_type_caption = "Temp Caption";
+string new_task_remind_caption = "Temp Caption";
+
 # 1 = left
 # 2 = right 
 int ans_hor = 0; 
@@ -185,30 +194,30 @@ int pc_r_get = 0;
 
 # 标记是否需要练习
 int prac_marker = parameter_manager.get_int("PracticeSwitch");
-#------------------------- Function Part --------------------------
+#------------------------- 加载功能组件 --------------------------
 include "./function.pcl";
-/*
-	show_this(code); 根据控制数组选择性呈现刺激
-	relax_check(); 检查是否需要休息
-*/
+# 包括：通用数据记录函数；按键，正确率记录函数；试次呈现函数
 
-string new_block_type_caption = "Temp Caption";
-string new_task_remind_caption = "Temp Caption";
+################################################################################################
+#
+#                                   刺激呈现开始
+#                                    
+################################################################################################
+# Screen#1 欢迎语
 trial_start_instruct.present();
-#------------------------- Show by Order: Practice ------------------
 
 loop prac_marker = 1 until prac_marker == 0
 begin
 	count_relax = 0;
+	# Screen#2 过渡到练习环节
 	practice_instruct.present();
-	new_block_type_caption = "Temp Caption";
-	new_task_remind_caption = "Temp Caption";
+	
 	loop int i = 1 until i > prac_times
 	begin
+			# Screen#3 练习要求说明
 			if i==1 || i == prac_times/2 + 1 then
-					# new_block_type_caption = "任务 " + string(i);
-					new_block_type_caption = "内容";
-					if trial_list[i][1] == 1 then
+					new_block_type_caption = "任务";
+					if prac_trial_list_A[i][1] == 1 then
 						new_task_remind_caption = new_task_remind_caption_motion;
 						text_remind_type.set_caption(new_block_type_caption, true);
 						text_remind_type.set_font_color(0,255,0);
@@ -216,7 +225,7 @@ begin
 						text_remind_task.set_caption(new_task_remind_caption, true);
 						block_instruct_trial.present();
 						block_instruct_show_trial.present();
-					elseif trial_list[i][1] == 2 then
+					elseif prac_trial_list_A[i][1] == 2 then
 						new_task_remind_caption = new_task_remind_caption_sound;
 						text_remind_type.set_caption(new_block_type_caption, true);
 						text_remind_type.set_font_color(0,255,0);
@@ -225,33 +234,34 @@ begin
 						block_instruct_trial.present();
 					end;
 			end;
-		pc_r_get = show_this(i, prac_trial_list_A,prac_marker);
+		# Screen#4 练习开始
+		pc_r_get = show_this(i, prac_trial_list_A, prac_marker);
 		pc = pc + pc_r_get;
-		if mod(i,TRIAL_TOTAL) == 0 then
-			trial_entire_end_instruct.present();
-		end;
 		i = i + 1;
 	end;
+	# Screen#5 练习结果
+	# 正确率达标，通过测试
 	if pc/prac_times >= pc_limit then
 		prac_marker = 0;
+		pass_trial.present();
 	else
+	# 正确率不达标，重新练习
 		prac_marker = 1;
 		pc = 0;
-		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)));
+		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)), true);
 		redo_trial.present();
 	end;
 end;
 
-#------------------------- Show by Order: Formal ------------------
+# Screen#6 正式实验介绍
 count_relax = 0;
+start_term_button.set_caption("接下来是正式测试。请按 \" START \" 键进入正式测试", true);
 trial_start_instruct.present();
-new_block_type_caption = "Temp Caption";
-new_task_remind_caption = "Temp Caption";
+
 loop int i = 1 until i > TRIAL_TOTAL
 begin
 		if i==1 || i == TRIAL_TOTAL/2 + 1 then
-				# new_block_type_caption = "任务 " + string(i);
-		new_block_type_caption = "内容";
+		new_block_type_caption = "任务";
 		if trial_list[i][1] == 1 then
 			new_task_remind_caption = new_task_remind_caption_motion;
 			text_remind_type.set_caption(new_block_type_caption, true);
@@ -269,9 +279,9 @@ begin
 			block_instruct_trial.present();
 		end;
 	end;
+	# Screen#7 正式实验呈现
 	show_this(i,trial_list,prac_marker);
-	if mod(i,TRIAL_TOTAL) == 0 then
-		trial_entire_end_instruct.present();
-	end;
 	i = i + 1;
 end;
+# Screen#8 实验结束，感谢被试
+trial_entire_end_instruct.present();

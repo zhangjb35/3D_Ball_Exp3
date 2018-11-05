@@ -1,4 +1,4 @@
-#-------------------------- Data Record --------------------------
+#-------------------------- 数据记录函数 --------------------------
 int wrap_count = 0;
 sub record(string info)
 begin
@@ -28,30 +28,38 @@ begin
 		record("missing");
 	end;
 end;
-#-------------------------- Relax Check --------------------------
+#-------------------------- 休息检测 --------------------------
 sub relax_check
 begin
 	if prac_marker == 1 then
 		term.print_line("count_relax = " + string(count_relax));
-		if count_relax == p_count_relax_limit && p_count_show_relax + 1 != prac_times/p_count_relax_limit then
-			if (p_count_show_relax + 1) * p_count_relax_limit != prac_times/2 then
-				p_count_show_relax = p_count_show_relax + 1;
-				text_relax_remind.set_caption("休息 (" + string(p_count_show_relax) + "/" + string(prac_times/p_count_relax_limit-2) +")", true);
-				trial_relax_instruct.present();
+		# 针对练习阶段
+		if count_relax == p_count_relax_limit then # 达到休息标准
+			if count_relax != prac_times/2 then # 不在换 block 休息
+				if count_relax != prac_times then # 不在最后一次休息	
+					p_count_show_relax = p_count_show_relax + 1;	
+					text_relax_remind.set_caption("休息 (" + string(p_count_show_relax) + "/" + string(prac_times/p_count_relax_limit-2) +")", true);
+					trial_relax_instruct.present();	
+				end;
 			end;
 			count_relax = 0;
 		end;
 	elseif prac_marker == 0 then
 		term.print_line("count_relax = " + string(count_relax));
-		if count_relax == count_relax_limit && count_show_relax + 1 != TRIAL_TOTAL/count_relax_limit then
-			count_show_relax = count_show_relax + 1;
-			text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(TRIAL_TOTAL/count_relax_limit) +")", true);
-			trial_relax_instruct.present();
+		# 针对正式阶段
+		if count_relax == count_relax_limit then # 达到休息标准
+			if count_relax != TRIAL_TOTAL/2 then # 不在换 block 休息
+				if count_relax != TRIAL_TOTAL then # 不在最后一次休息	
+					count_show_relax = count_show_relax + 1;	
+					text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(TRIAL_TOTAL/count_relax_limit-2) +")", true);
+					trial_relax_instruct.present();	
+				end;
+			end;
 			count_relax = 0;
 		end;
 	end;
 end;
-#-------------------------- Show This --------------------------
+#-------------------------- 呈现试次 --------------------------
 sub int show_this(int this, array < int,2 > trial_list_toshow, int p_marker)
 begin
 	int pc_r = 0;
