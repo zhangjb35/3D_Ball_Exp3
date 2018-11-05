@@ -1,43 +1,18 @@
-#------------------------- Setting Fixation Duration --------------------------
+################################################################################################
+#
+#                                   呈现参数相关  
+#                                    
+################################################################################################
+#------------------------- 注视点间隔随机化 --------------------------
 array <int> fix_duration[3] = { 400, 500, 600 };
-#-------------------------- Prepare to Record Data --------------------------
-string subj = logfile.subject();
-int trial_mark = 1;
-string COMMA = ",";
-string RETURN = "\n";
-string data_file_name = subj + "_data.csv";
-output_file out = new output_file;
-out.open("../Data/" + data_file_name);
-array<string> headings[8];
-headings[1] = "subject";
-headings[2] = "trial";
-headings[3] = "block_type";
-headings[4] = "main_task";
-headings[5] = "irr_stim";
-headings[6] = "indirect_task";
-headings[7] = "ACC";
-headings[8] = "RT";
-loop int i = 1 until i > headings.count()
-begin
-	if i != headings.count() then
-		out.print(headings[i] + COMMA);
-	elseif i == headings.count() then
-		out.print(headings[i]);
-	end;
-	i = i + 1;
-end;
-out.print(RETURN);
-out.close();
-#--------------------------------------------------------------
-#                          Present Setup
-#--------------------------------------------------------------
+#------------------------- 刺激呈现参数汇总 --------------                    
 int TRIAL_TOTAL = 720;
 int PARA_TOTAL = 4;
-# read data using input_file type
+# 定位正式实验序列
 input_file in = new input_file;
 in.open( "./seq/seq.txt" );
 
-# loading formal trial seq list
+# 加载正式实验序列
 array<int> trial_list[TRIAL_TOTAL][PARA_TOTAL];
 int count = 0;
 loop until
@@ -49,7 +24,7 @@ begin
    trial_list[count][3] = in.get_int(); # irr_stim
    trial_list[count][4] = in.get_int(); # indirect_task
 end;
-# extact practice seq
+# 抽取部分试次作为练习试次，前后分为两个主任务类型故分割成前后抽取
 int prac_times = 40;
 array<int> prac_trial_list_A[prac_times/2][PARA_TOTAL];
 array<int> prac_trial_list_B[prac_times/2][PARA_TOTAL];
@@ -77,18 +52,56 @@ begin
 	i = i + 1;
 end;
 prac_trial_list_B.shuffle();
-
 prac_trial_list_A.append(prac_trial_list_B);
-
 term.print_line(prac_trial_list_A);
 
-#------------------------- Set Relax Interval --------------
+#------------------------- 休息环节参数设定 --------------
+# 通用
 int count_relax = 0; # 刺激呈现次数计数器
-double count_relax_limit = 10; # 休息条件
-int count_show_relax = 0; # 由于更新 relax 进度提醒信息
 
+# 练习时
+double p_count_relax_limit = 10; # 休息条件 practice part
+int p_count_show_relax = 0; # 更新 relax 进度提醒信息
+
+# 正式实验时
+double count_relax_limit = 10; # 休息条件
+int count_show_relax = 0; # 更新 relax 进度提醒信息
+################################################################################################
+#
+#                                   数据收集相关  
+#                                    
+################################################################################################
+#-------------------------- 创建数据收集文件 --------------------------
+string subj = logfile.subject();
+int trial_mark = 1;
+string COMMA = ",";
+string RETURN = "\n";
+string data_file_name = subj + "_data.csv";
+output_file out = new output_file;
+out.open("../Data/" + data_file_name);
+array<string> headings[9];
+headings[1] = "subject";
+headings[2] = "trial";
+headings[3] = "practice_index";
+headings[4] = "block_type";
+headings[5] = "main_task";
+headings[6] = "irr_stim";
+headings[7] = "indirect_task";
+headings[8] = "ACC";
+headings[9] = "RT";
+loop int i = 1 until i > headings.count()
+begin
+	if i != headings.count() then
+		out.print(headings[i] + COMMA);
+	elseif i == headings.count() then
+		out.print(headings[i]);
+	end;
+	i = i + 1;
+end;
+out.print(RETURN);
+out.close();
 #--------------------------------------------------------------
-#                          Subj Plan
+#              被试间平衡：根据被试编号确定按键及提示语系列
 #--------------------------------------------------------------
 int task_set = 0;
 if int(subj)-(int(subj)/2)* 2 == 0 then
@@ -154,50 +167,84 @@ elseif task_set == 4 then
 	ans_gapno = 1; 
 	
 end;
+
+
+################################################################################################
+#
+#                                   被试品控  
+#                                    
+################################################################################################
+double pc_limit = 0.80; # 目标正确率
+
+double pc = 0.0; # 初始正确率
+
+# 记录信息需要
+int pc_r_get = 0;
+
+# 标记是否需要练习
+int prac_marker = parameter_manager.get_int("PracticeSwitch");
 #------------------------- Function Part --------------------------
 include "./function.pcl";
 /*
 	show_this(code); 根据控制数组选择性呈现刺激
 	relax_check(); 检查是否需要休息
 */
-#------------------------- Show by Order: Practice ------------------
-count_relax = 0;
-trial_start_instruct.present();
+
 string new_block_type_caption = "Temp Caption";
 string new_task_remind_caption = "Temp Caption";
-loop int i = 1 until i > prac_times
+trial_start_instruct.present();
+#------------------------- Show by Order: Practice ------------------
+
+loop prac_marker = 1 until prac_marker == 0
 begin
-		if i==1 || i == prac_times/2 + 1 then
-				# new_block_type_caption = "任务 " + string(i);
-				new_block_type_caption = "内容";
-				if trial_list[i][1] == 1 then
-					new_task_remind_caption = new_task_remind_caption_motion;
-					text_remind_type.set_caption(new_block_type_caption, true);
-					text_remind_type.set_font_color(0,255,0);
-					text_remind_type.redraw();
-					text_remind_task.set_caption(new_task_remind_caption, true);
-					block_instruct_trial.present();
-					block_instruct_show_trial.present();
-				elseif trial_list[i][1] == 2 then
-					new_task_remind_caption = new_task_remind_caption_sound;
-					text_remind_type.set_caption(new_block_type_caption, true);
-					text_remind_type.set_font_color(0,255,0);
-					text_remind_type.redraw();
-					text_remind_task.set_caption(new_task_remind_caption, true);
-					block_instruct_trial.present();
-				end;
+	count_relax = 0;
+	practice_instruct.present();
+	new_block_type_caption = "Temp Caption";
+	new_task_remind_caption = "Temp Caption";
+	loop int i = 1 until i > prac_times
+	begin
+			if i==1 || i == prac_times/2 + 1 then
+					# new_block_type_caption = "任务 " + string(i);
+					new_block_type_caption = "内容";
+					if trial_list[i][1] == 1 then
+						new_task_remind_caption = new_task_remind_caption_motion;
+						text_remind_type.set_caption(new_block_type_caption, true);
+						text_remind_type.set_font_color(0,255,0);
+						text_remind_type.redraw();
+						text_remind_task.set_caption(new_task_remind_caption, true);
+						block_instruct_trial.present();
+						block_instruct_show_trial.present();
+					elseif trial_list[i][1] == 2 then
+						new_task_remind_caption = new_task_remind_caption_sound;
+						text_remind_type.set_caption(new_block_type_caption, true);
+						text_remind_type.set_font_color(0,255,0);
+						text_remind_type.redraw();
+						text_remind_task.set_caption(new_task_remind_caption, true);
+						block_instruct_trial.present();
+					end;
+			end;
+		pc_r_get = show_this(i, prac_trial_list_A,prac_marker);
+		pc = pc + pc_r_get;
+		if mod(i,TRIAL_TOTAL) == 0 then
+			trial_entire_end_instruct.present();
 		end;
-	show_this(i, prac_trial_list_A);
-	if mod(i,TRIAL_TOTAL) == 0 then
-		trial_entire_end_instruct.present();
+		i = i + 1;
 	end;
-	i = i + 1;
+	if pc/prac_times >= pc_limit then
+		prac_marker = 0;
+	else
+		prac_marker = 1;
+		pc = 0;
+		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)));
+		redo_trial.present();
+	end;
 end;
+
 #------------------------- Show by Order: Formal ------------------
 count_relax = 0;
 trial_start_instruct.present();
-string new_block_type_caption = "Temp Caption";
-string new_task_remind_caption = "Temp Caption";
+new_block_type_caption = "Temp Caption";
+new_task_remind_caption = "Temp Caption";
 loop int i = 1 until i > TRIAL_TOTAL
 begin
 		if i==1 || i == TRIAL_TOTAL/2 + 1 then
@@ -220,7 +267,7 @@ begin
 			block_instruct_trial.present();
 		end;
 	end;
-	show_this(i,trial_list);
+	show_this(i,trial_list,prac_marker);
 	if mod(i,TRIAL_TOTAL) == 0 then
 		trial_entire_end_instruct.present();
 	end;

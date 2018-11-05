@@ -30,23 +30,37 @@ end;
 #-------------------------- Relax Check --------------------------
 sub relax_check
 begin
-	term.print_line("count_relax = " + string(count_relax));
-	if count_relax == count_relax_limit && count_show_relax + 1 != TRIAL_TOTAL/count_relax_limit then
-		count_show_relax = count_show_relax + 1;
-		text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(TRIAL_TOTAL/count_relax_limit) +")", true);
-		trial_relax_instruct.present();
-		count_relax = 0;
+	if prac_marker == 1 then
+		term.print_line("count_relax = " + string(count_relax));
+		if count_relax == p_count_relax_limit && p_count_show_relax + 1 != prac_times/p_count_relax_limit then
+			if (p_count_show_relax + 1) * p_count_relax_limit != prac_times/2 then
+				p_count_show_relax = p_count_show_relax + 1;
+				text_relax_remind.set_caption("休息 (" + string(p_count_show_relax) + "/" + string(prac_times/p_count_relax_limit-2) +")", true);
+				trial_relax_instruct.present();
+			end;
+			count_relax = 0;
+		end;
+	elseif prac_marker == 0 then
+		term.print_line("count_relax = " + string(count_relax));
+		if count_relax == count_relax_limit && count_show_relax + 1 != TRIAL_TOTAL/count_relax_limit then
+			count_show_relax = count_show_relax + 1;
+			text_relax_remind.set_caption("休息 (" + string(count_show_relax) + "/" + string(TRIAL_TOTAL/count_relax_limit) +")", true);
+			trial_relax_instruct.present();
+			count_relax = 0;
+		end;
 	end;
 end;
 #-------------------------- Show This --------------------------
-sub show_this(int this, array < int,2 > trial_list_toshow)
+sub int show_this(int this, array < int,2 > trial_list_toshow, int p_marker)
 begin
+	int pc_r = 0;
 	# fixation
 	trial_fixation_event.set_duration(fix_duration[random(1,3)]);
 	trial_fixation.present();
 	# recored subj info and trial info
 	record(subj);
 	record(string(trial_mark));
+	record(string(p_marker));
 	trial_mark = trial_mark + 1;
 	
 	int block_type = trial_list_toshow[this][1];
@@ -271,4 +285,21 @@ begin
 		count_relax = count_relax + 1;
 		relax_check();
 	end;
+	if p_marker == 1 then
+		int type = stimulus_manager.last_stimulus_data().type();
+		if (type == stimulus_hit) then
+			feedback_pic.set_part( 1, good );
+			feedback_trial.present();
+			pc_r = 1;
+		elseif (type == stimulus_miss) then
+			feedback_pic.set_part( 1, missed );
+			feedback_trial.present();
+			pc_r = 0;
+		elseif (type == stimulus_incorrect) then
+			feedback_pic.set_part( 1, oops );
+			feedback_trial.present();
+			pc_r = 0;
+		end;
+	end;
+	return pc_r
 end;
