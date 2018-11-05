@@ -79,7 +79,7 @@ string RETURN = "\n";
 string data_file_name = subj + "_data.csv";
 output_file out = new output_file;
 out.open("../Data/" + data_file_name);
-array<string> headings[9];
+array<string> headings[11];
 headings[1] = "subject";
 headings[2] = "trial";
 headings[3] = "practice_index";
@@ -87,8 +87,10 @@ headings[4] = "block_type";
 headings[5] = "main_task";
 headings[6] = "irr_stim";
 headings[7] = "indirect_task";
-headings[8] = "ACC";
-headings[9] = "RT";
+headings[8] = "button_label";
+headings[9] = "button_pushed";
+headings[10] = "ACC";
+headings[11] = "RT";
 loop int i = 1 until i > headings.count()
 begin
 	if i != headings.count() then

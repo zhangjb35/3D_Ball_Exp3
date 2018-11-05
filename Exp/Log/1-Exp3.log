@@ -1,22 +1,18 @@
 Scenario - 
-Logfile written - 11/05/2018 12:06:47
+Logfile written - 11/05/2018 12:20:07
 
 Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
 
-1	1	Picture	!Start EXP	333	0	1	19342	1	0	next	other	0
-1	1	Response	3	19571	19238	0
-1	2	Response	3	41484	21810	0
-1	3	Picture	===Block Change===	41684	0	1	24010	1	0	next	other	0
-1	3	Response	3	65165	23481	0
-1	4	Response	3	91005	25311	0
-1	5	Picture	---fixation---	91038	0	1	5836	1	0	6000	other	0
-1	6	Picture	mfsi	97374	374	1	167	1	30	next	hit	9
-1	6	Response	1	105005	8004	0
-1	8	Picture	---fixation---	137558	0	1	4168	1	0	4000	other	0
-1	9	Picture	mn	143727	30	1	167	1	30	next	incorrect	12
-1	9	Response	2	151885	8188	0
-1	11	Picture	---fixation---	184244	0	1	6003	1	0	6000	other	0
-1	11	Response	1	189244	5000	1
-1	12	Picture	mn	190580	30	1	167	1	30	next	incorrect	16
-1	12	Response	1	196845	6294	0
-1	12	Quit		201084	10534	NA
+1	1	Picture	!Start EXP	500	0	1	3168	1	0	next	other	0
+1	1	Response	3	3510	3010	0
+1	2	Response	3	6390	2722	0
+1	3	Picture	===Block Change===	6669	0	1	7170	1	0	next	other	0
+1	3	Response	3	13190	6521	0
+1	4	Response	3	27670	13831	0
+1	5	Picture	---fixation---	27845	0	1	6003	1	0	6000	other	0
+1	6	Picture	mnsi	34348	333	1	167	1	30	next	hit	9
+1	6	Response	1	39990	5975	0
+1	8	Picture	---fixation---	74698	0	1	4168	1	0	4000	other	0
+1	9	Picture	mnsd	81034	289	1	167	1	30	next	hit	12
+1	9	Response	2	87830	7085	0
+1	10	Quit		109270	8061	NA
