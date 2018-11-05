@@ -27,9 +27,9 @@ $back = 4;
 $refresh_rate = EXPARAM( "RefreshRate");
 
 #------------------------- 各刺激呈现时间 --------------------------
-$duration_fixation = EXPARAM( "fixation_duration")500;
-$duration_stimulus = EXPARAM( "av_duration")500;
-$duration_present = EXPARAM( "exist_av_duration")2000;
+$duration_fixation = EXPARAM( "fixation_duration");
+$duration_stimulus = EXPARAM( "av_duration");
+$duration_present = EXPARAM( "exist_av_duration");
 #------------------------- 三维小球位置信息 ------------------------
 $position_camera_z = -100; 
 $position_ball_z =  0;
@@ -188,7 +188,7 @@ text { caption = "错了!"; font_size = 48;} oops;
 text { caption = "漏掉了!"; font_size = 48;} missed;
 
 trial {
-	trial_duration = 2000;
+	trial_duration = EXPARAM("feedback_duration");
 
 	picture { text good; x = 0; y = 0; } feedback_pic;
 	time = 0;
