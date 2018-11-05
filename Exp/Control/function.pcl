@@ -224,10 +224,10 @@ begin
 		relax_check();
 	# motion near
 	elseif block_type == 2 && main_task_type == 1 && irr_stim == 2 && indirect_task_type == 1 then # gap
-		ball.clear_texture();
 		event_mnsd_s.set_stimulus(sound_decrease_gap);
 		event_mnsd_m.set_target_button(ans_gap);
 		record("ans_gap");
+		ball.clear_texture();
 		mnsd_trial.present();
 		ball.set_texture(txr_ball,1); 
 		record_acc_rt();
@@ -275,10 +275,10 @@ begin
 	elseif block_type == 2 && main_task_type == 2 && irr_stim == 1 && indirect_task_type == 2 then # nogap
 		event_mfsi_m.set_target_button(ans_gapno);
 		record("ans_gapno");
-		ball.clear_texture();
 		event_mfsi_s.set_stimulus(sound_increase);
-		ball.set_texture(txr_ball,1); 
+		ball.clear_texture();
 		mfsi_trial.present();
+		ball.set_texture(txr_ball,1); 
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();

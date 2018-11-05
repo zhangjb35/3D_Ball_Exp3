@@ -14,15 +14,15 @@ front_clip_distance = 90;
 back_clip_distance = 350; 
 #------------------------- 反应模式及按键 --------------------
 response_matching = simple_matching;
-active_buttons = 4;
+active_buttons = 3;
 # 1 = LT 
 # 2 = RT
 # 3 = START
-# 4 = BACK
+# 4 = BACK （废弃）
 begin;
 #--------------- 按键别称 -----------
 $start = 3;
-$back = 4;
+# $back = 4;
 #------------------------- 显示器刷新率 --------------------------
 $refresh_rate = EXPARAM( "RefreshRate");
 
@@ -202,8 +202,20 @@ trial {
 	trial_duration = forever;
 	trial_type = specific_response;
 	terminator_button = $start;
-	picture { text redo_txt; x = 0; y = 0; };
+	picture { 
+		text redo_txt; 
+		x = 0; y = 0; 
+		text {
+			caption = "请按 \" START \" 键进重新开始练习";
+			font_size = 24;
+			font_color = 255,255,255;
+		};
+		x = 0; y = -100;
+};
 	time = 0;
+
+
+	
 } redo_trial;
 
 text { caption = "练习通过!"; font_size = 48;} pass_txt;
@@ -211,7 +223,16 @@ trial {
 	trial_duration = forever;
 	trial_type = specific_response;
 	terminator_button = $start;
-	picture { text pass_txt; x = 0; y = 0; };
+	picture { 
+		text pass_txt; 
+		x = 0; y = 0; 
+		text {
+			caption = "请按 \" START \" 键进离开练习阶段";
+			font_size = 24;
+			font_color = 255,255,255;
+		};
+		x = 0; y = -100;
+	};
 	time = 0;
 } pass_trial;
 
@@ -268,7 +289,7 @@ text {
 trial {
   trial_duration = forever;
   trial_type = specific_response;
-  terminator_button = $back;
+  terminator_button = $start;
   stimulus_event {
 		picture pic_entire_end_instruct;
 		code = "!End EXP";
@@ -305,7 +326,6 @@ trial {
 		time = 0;
 		code = "---fixation---";
   }trial_fixation_event;
-
 } trial_fixation;
 
 #------------------------- Block 间隔屏 --------------------------
@@ -365,7 +385,7 @@ picture {
   text text_remind_task;
   x = 0; y = -50;
   text {
-		caption = "按 \" BACK \" 键返回测试";
+		caption = "按 \" START \" 键返回测试";
 		font_size = 24;
 		font_color = 255,255,255;
   }relax_term_button;
@@ -375,7 +395,7 @@ picture {
 trial {
   trial_duration = forever;
   trial_type = specific_response;
-  terminator_button = $back;
+  terminator_button = $start;
   stimulus_event {
 		picture pic_relax_instruct;
 		code = "+++relax+++";
@@ -406,18 +426,28 @@ trial {
 	  x = -10; y = 0; z = 0;
 	  rotation = 0.0, 0.0, 90.0;
 			 
-	sphere { 
-		  radius = $sphere_r;
+		sphere { 
+			  radius = $sphere_r;
 
-		  slices = 512; 
-		  stacks = 512;
-		  alpha = 1; 
-		  # 1 = 不透明
-		  mesh_texture = txr_ball;
+			  slices = 512; 
+			  stacks = 512;
+			  alpha = 1; 
+			  # 1 = 不透明
+			  mesh_texture = txr_ball;
+		};
+		x = 10; y = 0; z = 0;
+		light light_main;
+   };
+	time = 0;
+	picture { 
+		text {
+			caption = "请按 \" START \" 键结束示例开始练习。请做好准备！";
+			font_size = 24;
+			font_color = 0,255,0;
+		};
+		x = 0; y = 0;
 	};
-	x = 10; y = 0; z = 0;
-	light light_main;
- };
+	time = 10000;
 } block_instruct_show_trial;
 
 #------------------------- 分条件三维运动刺激 --------------------------

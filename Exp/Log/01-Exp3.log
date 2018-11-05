@@ -1,246 +1,687 @@
 Scenario - 
-Logfile written - 11/05/2018 20:41:41
+Logfile written - 11/05/2018 21:23:18
 
 Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
 
-01	1	Picture	!Start EXP	13672	0	1	6003	1	0	next	other	0
-01	1	Response	3	19491	5819	0
-01	2	Response	3	20771	1097	0
-01	3	Picture	===Block Change===	21009	0	1	1667	1	0	next	other	0
-01	3	Response	3	22051	1043	0
-01	4	Response	3	27892	5216	0
-01	5	Picture	---fixation---	28012	0	1	2001	1	0	5000	other	0
-01	6	Picture	mnsi	30513	406	1	167	1	80	next	miss	0
-01	7	Response	1	33332	818	0
-01	8	Picture	---fixation---	33681	0	1	1501	1	0	4000	other	0
-01	8	Response	1	34784	1104	70
-01	9	Picture	mnsd	35681	393	1	167	1	80	next	incorrect	13
-01	9	Response	1	36692	1404	0
-01	9	Response	1	37742	2454	714
-01	11	Picture	---fixation---	40183	0	1	14673	1	0	4000	other	0
-01	11	Response	1	40532	348	0
-01	11	Response	1	40686	503	1854
-01	11	Response	1	44007	3824	462
-01	11	Response	1	44007	3824	2292
-01	12	Picture	mf	55190	80	1	167	1	80	next	miss	0
-01	13	Response	1	57812	121	0
-01	14	Picture	---fixation---	58858	0	1	2835	1	0	4000	other	0
-01	15	Picture	mfsi	62193	390	1	167	1	80	next	miss	0
-01	16	Response	1	64535	175	0
-01	17	Picture	---fixation---	65527	0	1	2835	1	0	6000	other	0
-01	17	Response	1	67171	1644	179
-01	18	Picture	mnsd	68695	290	1	167	1	80	next	incorrect	28
-01	18	Response	1	69655	1250	0
-01	19	Response	1	71737	374	0
-01	20	Picture	---fixation---	72530	0	1	2668	1	0	6000	other	0
-01	20	Response	1	73823	1292	72
-01	21	Picture	mf	75532	80	1	167	1	80	next	hit	33
-01	21	Response	1	76053	601	0
-01	22	Response	1	78217	184	0
-01	23	Picture	---fixation---	79200	0	1	2501	1	0	6000	other	0
-01	23	Response	1	80130	930	3
-01	24	Picture	mnsd	82201	386	1	167	1	80	next	hit	38
-01	24	Response	1	82612	797	0
-01	25	Response	1	84532	330	0
-01	26	Picture	---fixation---	85369	0	1	2001	1	0	4000	other	0
-01	26	Response	1	86609	1239	168
-01	27	Picture	mnsi	87704	301	1	167	1	80	next	hit	43
-01	27	Response	1	88932	1529	0
-01	29	Picture	---fixation---	91038	0	1	2001	1	0	5000	other	0
-01	29	Response	1	91252	214	0
-01	30	Response	1	93332	240	0
-01	30	Picture	mfsd	93539	448	1	167	1	80	next	miss	0
-01	30	Response	1	95315	2223	18
-01	32	Picture	---fixation---	96707	0	1	1667	1	0	5000	other	0
-01	32	Response	1	97092	384	0
-01	33	Picture	mnsd	98875	399	1	167	1	80	next	hit	52
-01	33	Response	1	99014	539	0
-01	33	Response	1	100932	2456	0
-01	34	Picture	+++relax+++	101043	0	1	13672	1	0	next	other	0
-01	34	Response	1	103012	1969	0
-01	34	Response	3	107811	6769	0
-01	34	Response	4	114532	13489	0
-01	35	Picture	---fixation---	114715	0	1	2001	1	0	6000	other	0
-01	36	Picture	mfsi	117216	455	1	167	1	80	next	incorrect	60
-01	36	Response	3	118373	1612	0
-01	38	Picture	---fixation---	120718	0	1	1501	1	0	6000	other	0
-01	38	Response	1	120852	134	0
-01	39	Picture	mn	122552	80	1	167	1	80	next	hit	64
-01	39	Response	1	122932	460	0
-01	40	Response	1	125012	126	0
-01	41	Picture	---fixation---	126053	0	1	1834	1	0	6000	other	0
-01	41	Response	1	127006	953	7
-01	42	Picture	mnsi	128221	285	1	167	1	80	next	incorrect	69
-01	42	Response	1	129012	1076	0
-01	43	Response	1	131173	451	0
-01	44	Picture	---fixation---	131889	0	1	2001	1	0	6000	other	0
-01	44	Response	1	133071	1182	33
-01	45	Picture	mfsi	134223	294	1	167	1	80	next	incorrect	74
-01	45	Response	1	135013	1083	0
-01	46	Response	1	137012	288	0
-01	47	Picture	---fixation---	137891	0	1	1667	1	0	4000	other	0
-01	47	Response	1	138879	988	66
-01	48	Picture	mfsi	140059	440	1	167	1	80	next	incorrect	79
-01	48	Response	1	140855	1236	0
-01	49	Response	1	142932	539	0
-01	50	Picture	---fixation---	143560	0	1	2001	1	0	5000	other	0
-01	50	Response	1	144700	1140	3
-01	51	Picture	mn	145895	80	1	167	1	80	next	incorrect	84
-01	51	Response	1	146612	797	0
-01	51	Response	1	148532	2717	0
-01	53	Picture	---fixation---	149730	0	1	1834	1	0	5000	other	0
-01	53	Response	1	150437	708	15
-01	54	Picture	mfsd	151897	292	1	167	1	80	next	incorrect	89
-01	54	Response	1	152532	926	0
-01	55	Response	1	154692	293	0
-01	56	Picture	---fixation---	155566	0	1	2001	1	0	4000	other	0
-01	56	Response	1	156715	1150	59
-01	57	Picture	mfsi	157900	300	1	167	1	80	next	hit	94
-01	57	Response	1	158933	1333	0
-01	59	Picture	---fixation---	161235	0	1	2001	1	0	4000	other	0
-01	59	Response	1	161332	97	0
-01	60	Picture	mf	163569	80	1	167	1	80	next	incorrect	98
-01	60	Response	1	163892	403	0
-01	61	Response	1	166933	697	0
-01	62	Picture	---fixation---	167404	0	1	1834	1	0	6000	other	0
-01	63	Picture	mn	169571	80	1	167	1	80	next	incorrect	102
-01	63	Response	1	170132	641	0
-01	65	Picture	===Block Change===	173406	0	1	14173	1	0	next	other	0
-01	65	Response	1	173500	94	0
-01	65	Response	1	176372	2966	0
-01	65	Response	3	187412	14005	0
-01	66	Picture	---fixation---	187579	0	1	1501	1	0	5000	other	0
-01	67	Sound	si	188968	0	1			0		miss	0
-01	67	Response	1	191412	2444	0
-01	69	Picture	---fixation---	192581	0	1	1501	1	0	6000	other	0
-01	69	Response	1	193975	1394	0
-01	70	Picture	mfsi	194582	411	1	167	1	80	next	miss	0
-01	70	Response	1	196253	2082	39
-01	72	Picture	---fixation---	197917	0	1	1501	1	0	6000	other	0
-01	72	Response	1	198830	914	22
-01	73	Picture	mfsi	199751	297	1	167	1	80	next	miss	0
-01	73	Response	1	201708	2254	26
-01	75	Picture	---fixation---	203252	0	1	1501	1	0	4000	other	0
-01	75	Response	1	204055	803	77
-01	76	Picture	mnsi	205086	249	1	167	1	80	next	incorrect	121
-01	76	Response	1	206692	1855	0
-01	78	Picture	---fixation---	208421	0	1	1667	1	0	4000	other	0
-01	78	Response	1	208924	503	8
-01	79	Picture	mnsi	210589	367	1	167	1	80	next	hit	125
-01	79	Response	1	211332	1110	0
-01	81	Picture	---fixation---	213757	0	1	1334	1	0	5000	other	0
-01	81	Response	1	213812	55	0
-01	82	Picture	mfsi	215591	391	1	167	1	80	next	incorrect	129
-01	82	Response	1	216292	1093	0
-01	83	Response	1	218452	861	0
-01	84	Picture	---fixation---	218759	0	1	1501	1	0	4000	other	0
-01	85	Picture	mfsd	220760	379	1	167	1	80	next	hit	133
-01	85	Response	1	220933	552	0
-01	86	Response	1	223492	731	0
-01	87	Picture	---fixation---	223928	0	1	1667	1	0	5000	other	0
-01	88	Response	1	225736	73	0
-01	88	Picture	mnsd	225929	266	1	167	1	80	next	miss	0
-01	88	Response	1	227968	2305	5
-01	90	Picture	---fixation---	229263	0	1	1667	1	0	5000	other	0
-01	90	Response	1	230183	920	29
-01	91	Picture	mnsd	231431	384	1	167	1	80	next	incorrect	142
-01	91	Response	1	232532	1485	0
-01	93	Picture	---fixation---	234599	0	1	1501	1	0	4000	other	0
-01	93	Response	1	234692	93	0
-01	94	Sound	sd	236003	0	1			0		hit	146
-01	94	Response	1	237012	1009	0
-01	95	Picture	+++relax+++	238434	0	1	14506	1	0	next	other	0
-01	95	Response	1	239332	898	0
-01	95	Response	4	252852	14418	0
-01	96	Picture	---fixation---	252940	0	1	1667	1	0	5000	other	0
-01	97	Picture	mfsi	255108	391	1	167	1	80	next	hit	152
-01	97	Response	1	256614	1897	0
-01	99	Picture	---fixation---	258276	0	1	1667	1	0	4000	other	0
-01	99	Response	1	259074	798	21
-01	100	Picture	mnsd	260276	277	1	167	1	80	next	incorrect	156
-01	100	Response	1	261733	1733	0
-01	102	Picture	---fixation---	263611	0	1	1334	1	0	4000	other	0
-01	102	Response	1	264214	603	0
-01	103	Picture	mfsd	265279	301	1	167	1	80	next	incorrect	160
-01	103	Response	1	266612	1635	0
-01	105	Picture	---fixation---	268613	0	1	1667	1	0	6000	other	0
-01	105	Response	1	268932	319	0
-01	106	Sound	sd	270137	0	1			0		incorrect	164
-01	106	Response	1	271332	1195	0
-01	107	Response	1	273412	964	0
-01	108	Picture	---fixation---	273615	0	1	1667	1	0	4000	other	0
-01	109	Response	1	275575	235	0
-01	109	Picture	mnsi	275616	277	1	167	1	80	next	miss	0
-01	109	Response	1	277454	2115	38
-01	111	Picture	---fixation---	278951	0	1	1501	1	0	5000	other	0
-01	111	Response	1	279927	976	48
-01	112	Picture	mnsd	280785	265	1	167	1	80	next	hit	173
-01	112	Response	1	282292	1772	0
-01	114	Picture	---fixation---	284287	0	1	1667	1	0	6000	other	0
-01	114	Response	1	284772	485	0
-01	115	Sound	si	285781	0	1			0		incorrect	177
-01	115	Response	1	287172	1391	0
-01	117	Picture	---fixation---	289289	0	1	1334	1	0	6000	other	0
-01	117	Response	1	289652	363	0
-01	118	Picture	mnsd	290956	277	1	167	1	80	next	hit	181
-01	118	Response	1	292052	1373	0
-01	120	Picture	---fixation---	294291	0	1	1501	1	0	5000	other	0
-01	120	Response	1	294612	322	0
-01	121	Sound	sd	295737	0	1			0		hit	185
-01	121	Response	1	297572	1835	0
-01	123	Picture	---fixation---	299293	0	1	1834	1	0	5000	other	0
-01	123	Response	1	300856	1563	0
-01	124	Sound	si	300918	0	1			0		miss	0
-01	125	Response	1	303652	357	0
-01	126	Response	1	305972	1510	0
-01	126	Response	3	377572	73110	0
-01	127	Picture	!Start EXP	377659	0	1	212423	1	0	next	other	0
-01	127	Response	3	589893	212233	0
-01	128	Picture	===Block Change===	590082	0	1	101543	1	0	next	other	0
-01	128	Response	3	691173	101090	0
-01	129	Response	3	698697	7072	0
-01	130	Picture	---fixation---	698795	0	1	16007	1	0	4000	other	0
-01	131	Picture	mf	715135	80	1	167	1	80	next	miss	0
-01	132	Picture	---fixation---	717636	0	1	2168	1	0	6000	other	0
-01	133	Picture	mnsd	720304	418	1	167	1	80	next	miss	0
-01	134	Picture	---fixation---	722638	0	1	3335	1	0	5000	other	0
-01	135	Picture	mnsi	726473	391	1	167	1	80	next	miss	0
-01	136	Picture	---fixation---	728808	0	1	1834	1	0	6000	other	0
-01	137	Picture	mn	730975	80	1	167	1	80	next	miss	0
-01	138	Picture	---fixation---	733310	0	1	1501	1	0	5000	other	0
-01	139	Picture	mnsd	735310	389	1	167	1	80	next	miss	0
-01	140	Picture	---fixation---	737478	0	1	2168	1	0	5000	other	0
-01	141	Picture	mnsd	739979	283	1	167	1	80	next	miss	0
-01	142	Picture	---fixation---	742147	0	1	1834	1	0	6000	other	0
-01	143	Picture	mnsi	744481	417	1	167	1	80	next	miss	0
-01	144	Picture	---fixation---	746649	0	1	2168	1	0	6000	other	0
-01	145	Picture	mf	749150	80	1	167	1	80	next	miss	0
-01	146	Picture	---fixation---	751484	0	1	1834	1	0	6000	other	0
-01	147	Picture	mfsi	753818	408	1	167	1	80	next	miss	0
-01	148	Picture	---fixation---	756153	0	1	2501	1	0	6000	other	0
-01	149	Picture	mfsi	758987	295	1	167	1	80	next	miss	0
-01	150	Picture	+++relax+++	761321	0	1	88704	1	0	next	other	0
-01	150	Response	3	836294	74972	0
-01	150	Response	4	849973	88652	0
-01	151	Picture	---fixation---	850026	0	1	1667	1	0	6000	other	0
-01	152	Picture	mfsi	852193	447	1	167	1	80	next	miss	0
-01	153	Picture	---fixation---	854194	0	1	2168	1	0	4000	other	0
-01	154	Picture	mfsi	856695	275	1	167	1	80	next	miss	0
-01	155	Picture	---fixation---	859196	0	1	1834	1	0	4000	other	0
-01	156	Picture	mfsd	861530	438	1	167	1	80	next	miss	0
-01	157	Picture	---fixation---	863865	0	1	3001	1	0	4000	other	0
-01	158	Picture	mnsi	867366	382	1	167	1	80	next	miss	0
-01	159	Picture	---fixation---	869367	0	1	1667	1	0	6000	other	0
-01	160	Picture	mn	871368	80	1	167	1	80	next	miss	0
-01	161	Picture	---fixation---	874036	0	1	2001	1	0	4000	other	0
-01	162	Picture	mf	876370	80	1	167	1	80	next	miss	0
-01	163	Picture	---fixation---	879038	0	1	1501	1	0	6000	other	0
-01	164	Picture	mnsd	880872	275	1	167	1	80	next	miss	0
-01	165	Picture	---fixation---	883373	0	1	2168	1	0	5000	other	0
-01	166	Picture	mfsi	885874	299	1	167	1	80	next	miss	0
-01	167	Picture	---fixation---	888375	0	1	1501	1	0	6000	other	0
-01	168	Picture	mn	890209	80	1	167	1	80	next	miss	0
-01	169	Picture	---fixation---	892877	0	1	1501	1	0	5000	other	0
-01	170	Picture	mfsd	894711	298	1	167	1	80	next	miss	0
-01	171	Picture	+++relax+++	897045	0	1	45946	1	0	next	other	0
-01	171	Quit		937333	40288	NA
+01	1	Picture	!Start EXP	13672	0	1	4835	1	0	next	other	0
+01	1	Response	3	18315	4643	0
+01	2	Response	3	22475	3967	0
+01	3	Picture	===Block Change===	22676	0	1	4335	1	0	next	other	0
+01	3	Response	3	26396	3720	0
+01	4	Response	3	33515	6504	0
+01	5	Picture	---fixation---	33681	0	1	2001	1	0	5000	other	0
+01	6	Picture	mfsi	36182	387	1	167	1	80	next	miss	0
+01	8	Picture	---fixation---	38683	0	1	1501	1	0	5000	other	0
+01	8	Response	1	39713	1030	42
+01	9	Picture	mnsd	40684	419	1	167	1	80	next	miss	0
+01	11	Picture	---fixation---	43185	0	1	1667	1	0	6000	other	0
+01	11	Response	1	44262	1077	57
+01	12	Picture	mnsd	45352	415	1	167	1	80	next	miss	0
+01	14	Picture	---fixation---	47687	0	1	2168	1	0	6000	other	0
+01	15	Picture	mnsi	50354	439	1	167	1	80	next	miss	0
+01	15	Response	1	51025	1110	94
+01	17	Picture	---fixation---	52522	0	1	1667	1	0	6000	other	0
+01	17	Response	1	52634	112	0
+01	17	Response	1	53801	1279	138
+01	18	Picture	mfsi	54690	406	1	167	1	80	next	incorrect	22
+01	18	Response	1	55115	831	0
+01	19	Response	1	56475	451	0
+01	20	Picture	---fixation---	57191	0	1	1501	1	0	4000	other	0
+01	20	Response	1	57888	697	27
+01	21	Picture	mfsi	59191	438	1	167	1	80	next	hit	27
+01	21	Response	1	59284	531	0
+01	22	Response	1	60634	443	0
+01	23	Picture	---fixation---	61359	0	1	1501	1	0	5000	other	0
+01	23	Response	1	62130	771	25
+01	24	Picture	mf	63193	80	1	167	1	80	next	incorrect	32
+01	24	Response	1	63593	480	2
+01	25	Response	1	64874	14	0
+01	26	Picture	---fixation---	66028	0	1	2001	1	0	5000	other	0
+01	26	Response	1	66530	503	25
+01	26	Response	1	67995	1967	0
+01	27	Picture	mfsi	68529	430	1	167	1	80	next	miss	0
+01	27	Response	1	69391	1291	45
+01	29	Picture	---fixation---	70696	0	1	1834	1	0	4000	other	0
+01	29	Response	1	70955	258	0
+01	29	Response	1	72406	1710	0
+01	30	Picture	mnsd	72864	295	1	167	1	80	next	miss	0
+01	30	Response	1	73906	1337	9
+01	31	Response	1	75354	989	0
+01	32	Picture	---fixation---	75532	0	1	1834	1	0	6000	other	0
+01	32	Response	1	76939	1408	178
+01	33	Picture	mnsd	77866	421	1	167	1	80	next	miss	0
+01	34	Response	1	78956	90	0
+01	35	Picture	---fixation---	80034	0	1	1501	1	0	6000	other	0
+01	35	Response	1	80635	601	1
+01	36	Picture	mn	81868	80	1	167	1	80	next	hit	52
+01	36	Response	1	82395	607	0
+01	37	Response	1	84155	953	0
+01	38	Picture	---fixation---	84369	0	1	2168	1	0	5000	other	0
+01	38	Response	1	85752	1384	5
+01	39	Picture	mnsi	87037	448	1	167	1	80	next	incorrect	57
+01	39	Response	1	87275	686	0
+01	40	Response	1	88794	424	0
+01	41	Picture	---fixation---	89538	0	1	1834	1	0	6000	other	0
+01	42	Picture	mnsi	91872	408	1	167	1	80	next	miss	0
+01	44	Picture	---fixation---	94206	0	1	2001	1	0	4000	other	0
+01	45	Picture	mfsd	96541	302	1	167	1	80	next	miss	0
+01	47	Picture	---fixation---	99208	0	1	2001	1	0	4000	other	0
+01	48	Picture	mf	101543	80	1	167	1	80	next	miss	0
+01	50	Picture	---fixation---	104044	0	1	2001	1	0	6000	other	0
+01	51	Picture	mfsi	106545	452	1	167	1	80	next	miss	0
+01	53	Picture	---fixation---	109046	0	1	1834	1	0	4000	other	0
+01	54	Picture	mn	111213	80	1	167	1	80	next	miss	0
+01	56	Picture	---fixation---	113881	0	1	2001	1	0	6000	other	0
+01	57	Picture	mf	116216	80	1	167	1	80	next	miss	0
+01	59	Picture	---fixation---	118717	0	1	1667	1	0	4000	other	0
+01	60	Picture	mfsd	120717	301	1	167	1	80	next	miss	0
+01	62	Picture	---fixation---	123052	0	1	1834	1	0	6000	other	0
+01	63	Picture	mn	125219	80	1	167	1	80	next	miss	0
+01	65	Picture	===Block Change===	128054	0	1	21342	1	0	next	other	0
+01	65	Response	3	149275	21221	0
+01	66	Picture	---fixation---	149396	0	1	1667	1	0	6000	other	0
+01	67	Sound	si	150973	0	1			0		miss	0
+01	69	Picture	---fixation---	153565	0	1	1501	1	0	6000	other	0
+01	70	Picture	mfsd	155566	406	1	167	1	80	next	miss	0
+01	72	Picture	---fixation---	157733	0	1	1501	1	0	6000	other	0
+01	73	Picture	mnsd	159567	242	1	167	1	80	next	miss	0
+01	75	Picture	---fixation---	162068	0	1	1667	1	0	6000	other	0
+01	76	Sound	sd	163671	0	1			0		miss	0
+01	78	Picture	---fixation---	166237	0	1	1334	1	0	4000	other	0
+01	79	Picture	mnsi	167904	249	1	167	1	80	next	miss	0
+01	81	Picture	---fixation---	170405	0	1	1501	1	0	6000	other	0
+01	82	Picture	mfsi	172406	383	1	167	1	80	next	miss	0
+01	84	Picture	---fixation---	174574	0	1	1667	1	0	6000	other	0
+01	85	Sound	si	176167	0	1			0		miss	0
+01	87	Picture	---fixation---	178742	0	1	1501	1	0	6000	other	0
+01	88	Sound	sd	180129	0	1			0		miss	0
+01	90	Picture	---fixation---	182744	0	1	1667	1	0	6000	other	0
+01	91	Sound	si	184294	0	1			0		miss	0
+01	93	Picture	---fixation---	186912	0	1	1501	1	0	5000	other	0
+01	94	Picture	mfsd	188746	266	1	167	1	80	next	miss	0
+01	96	Picture	---fixation---	191247	0	1	1667	1	0	5000	other	0
+01	97	Picture	mfsi	193248	298	1	167	1	80	next	miss	0
+01	99	Picture	---fixation---	195582	0	1	1667	1	0	5000	other	0
+01	100	Sound	sd	197094	0	1			0		miss	0
+01	102	Picture	---fixation---	199584	0	1	1501	1	0	5000	other	0
+01	103	Picture	mfsi	201418	239	1	167	1	80	next	miss	0
+01	105	Picture	---fixation---	203919	0	1	1334	1	0	5000	other	0
+01	106	Picture	mnsi	205587	243	1	167	1	80	next	miss	0
+01	108	Picture	---fixation---	207921	0	1	1667	1	0	4000	other	0
+01	109	Picture	mnsd	210089	376	1	167	1	80	next	miss	0
+01	111	Picture	---fixation---	212256	0	1	1334	1	0	4000	other	0
+01	112	Picture	mnsd	213924	249	1	167	1	80	next	miss	0
+01	114	Picture	---fixation---	216258	0	1	1501	1	0	6000	other	0
+01	115	Picture	mnsd	218092	253	1	167	1	80	next	miss	0
+01	117	Picture	---fixation---	220426	0	1	1334	1	0	6000	other	0
+01	118	Picture	mfsi	222094	293	1	167	1	80	next	miss	0
+01	120	Picture	---fixation---	224428	0	1	1667	1	0	5000	other	0
+01	121	Picture	mnsd	226429	259	1	167	1	80	next	miss	0
+01	123	Picture	---fixation---	228930	0	1	1667	1	0	5000	other	0
+01	124	Picture	mnsi	230931	291	1	167	1	80	next	miss	0
+01	126	Response	3	310875	77610	0
+01	127	Picture	!Start EXP	310965	0	1	30680	1	0	next	other	0
+01	127	Response	3	341435	30470	0
+01	128	Picture	===Block Change===	341644	0	1	52189	1	0	next	other	0
+01	128	Response	3	393515	51871	0
+01	129	Response	3	403275	9442	0
+01	130	Picture	---fixation---	403337	0	1	1667	1	0	5000	other	0
+01	131	Picture	mf	405338	80	1	167	1	80	next	miss	0
+01	132	Picture	---fixation---	406672	0	1	1834	1	0	4000	other	0
+01	133	Picture	mnsd	409006	385	1	167	1	80	next	miss	0
+01	134	Picture	---fixation---	410340	0	1	2001	1	0	5000	other	0
+01	135	Picture	mnsi	412674	295	1	167	1	80	next	miss	0
+01	136	Picture	---fixation---	414175	0	1	1667	1	0	6000	other	0
+01	137	Picture	mn	416176	80	1	167	1	80	next	miss	0
+01	138	Picture	---fixation---	417510	0	1	2168	1	0	4000	other	0
+01	139	Picture	mnsd	420177	382	1	167	1	80	next	miss	0
+01	140	Picture	---fixation---	421178	0	1	1834	1	0	5000	other	0
+01	141	Picture	mnsd	423345	300	1	167	1	80	next	miss	0
+01	142	Picture	---fixation---	424512	0	1	1501	1	0	6000	other	0
+01	143	Picture	mnsi	426513	420	1	167	1	80	next	miss	0
+01	144	Picture	---fixation---	427514	0	1	1667	1	0	4000	other	0
+01	145	Picture	mf	429515	80	1	167	1	80	next	miss	0
+01	146	Picture	---fixation---	430848	0	1	2001	1	0	6000	other	0
+01	147	Picture	mfsi	433350	450	1	167	1	80	next	miss	0
+01	148	Picture	---fixation---	434683	0	1	2168	1	0	5000	other	0
+01	149	Picture	mfsi	437351	388	1	167	1	80	next	miss	0
+01	150	Picture	---fixation---	438518	0	1	2001	1	0	6000	other	0
+01	151	Picture	mfsi	441019	399	1	167	1	80	next	miss	0
+01	152	Picture	---fixation---	442187	0	1	1501	1	0	6000	other	0
+01	153	Picture	mfsi	444187	418	1	167	1	80	next	miss	0
+01	154	Picture	---fixation---	445521	0	1	2001	1	0	4000	other	0
+01	155	Picture	mfsd	448022	392	1	167	1	80	next	miss	0
+01	156	Picture	---fixation---	449356	0	1	2001	1	0	4000	other	0
+01	157	Picture	mnsi	451691	302	1	167	1	80	next	miss	0
+01	158	Picture	---fixation---	452858	0	1	2001	1	0	6000	other	0
+01	159	Picture	mn	455192	80	1	167	1	80	next	miss	0
+01	160	Picture	---fixation---	456860	0	1	2001	1	0	6000	other	0
+01	161	Picture	mf	459194	80	1	167	1	80	next	miss	0
+01	162	Picture	---fixation---	460861	0	1	2001	1	0	6000	other	0
+01	163	Picture	mnsd	463362	392	1	167	1	80	next	miss	0
+01	164	Picture	---fixation---	464696	0	1	2334	1	0	6000	other	0
+01	165	Picture	mfsi	467531	396	1	167	1	80	next	miss	0
+01	166	Picture	---fixation---	468865	0	1	2168	1	0	5000	other	0
+01	167	Picture	mn	471366	80	1	167	1	80	next	miss	0
+01	168	Picture	---fixation---	473033	0	1	1667	1	0	4000	other	0
+01	169	Picture	mfsd	475201	447	1	167	1	80	next	miss	0
+01	170	Picture	---fixation---	476201	0	1	1667	1	0	5000	other	0
+01	171	Picture	mnsi	478369	466	1	167	1	80	next	miss	0
+01	172	Picture	---fixation---	479703	0	1	2001	1	0	6000	other	0
+01	173	Picture	mn	482037	80	1	167	1	80	next	miss	0
+01	174	Picture	---fixation---	483371	0	1	1501	1	0	5000	other	0
+01	175	Picture	mfsd	485205	292	1	167	1	80	next	miss	0
+01	176	Picture	---fixation---	486705	0	1	1834	1	0	6000	other	0
+01	177	Picture	mfsi	488873	303	1	167	1	80	next	miss	0
+01	178	Picture	---fixation---	490374	0	1	1501	1	0	4000	other	0
+01	179	Picture	mn	492208	80	1	167	1	80	next	miss	0
+01	180	Picture	---fixation---	493875	0	1	1834	1	0	6000	other	0
+01	181	Picture	mnsd	496209	427	1	167	1	80	next	miss	0
+01	182	Picture	---fixation---	497543	0	1	1501	1	0	4000	other	0
+01	183	Picture	mnsd	499544	409	1	167	1	80	next	miss	0
+01	184	Picture	---fixation---	500878	0	1	2334	1	0	5000	other	0
+01	185	Picture	mnsd	503713	413	1	167	1	80	next	miss	0
+01	186	Picture	---fixation---	504880	0	1	1834	1	0	4000	other	0
+01	187	Picture	mnsi	507047	293	1	167	1	80	next	miss	0
+01	188	Picture	---fixation---	508548	0	1	1667	1	0	4000	other	0
+01	189	Picture	mnsd	510716	406	1	167	1	80	next	miss	0
+01	190	Picture	---fixation---	511716	0	1	2001	1	0	6000	other	0
+01	191	Picture	mf	514050	80	1	167	1	80	next	miss	0
+01	192	Picture	---fixation---	515718	0	1	1501	1	0	5000	other	0
+01	193	Picture	mfsi	517719	399	1	167	1	80	next	miss	0
+01	194	Picture	---fixation---	519053	0	1	1667	1	0	4000	other	0
+01	195	Picture	mfsd	521220	447	1	167	1	80	next	miss	0
+01	196	Picture	---fixation---	522221	0	1	1834	1	0	5000	other	0
+01	197	Picture	mfsi	524555	429	1	167	1	80	next	miss	0
+01	198	Picture	---fixation---	525889	0	1	2001	1	0	5000	other	0
+01	199	Picture	mn	528223	80	1	167	1	80	next	miss	0
+01	200	Picture	---fixation---	529557	0	1	2168	1	0	5000	other	0
+01	201	Picture	mfsd	532225	379	1	167	1	80	next	miss	0
+01	202	Picture	---fixation---	533225	0	1	2168	1	0	5000	other	0
+01	203	Picture	mnsd	535893	390	1	167	1	80	next	miss	0
+01	204	Picture	---fixation---	536893	0	1	24510	1	0	5000	other	0
+01	205	Picture	mn	561737	80	1	167	1	80	next	miss	0
+01	206	Picture	---fixation---	563738	0	1	3335	1	0	5000	other	0
+01	207	Picture	mfsi	567573	374	1	167	1	80	next	miss	0
+01	208	Picture	---fixation---	568907	0	1	2668	1	0	5000	other	0
+01	209	Picture	mnsd	572075	407	1	167	1	80	next	miss	0
+01	210	Picture	---fixation---	573576	0	1	2835	1	0	5000	other	0
+01	211	Picture	mf	576744	80	1	333	1	80	next	miss	0
+01	212	Picture	---fixation---	578411	0	1	2668	1	0	5000	other	0
+01	213	Picture	mnsi	581412	296	1	167	1	80	next	miss	0
+01	214	Picture	---fixation---	582746	0	1	2668	1	0	5000	other	0
+01	215	Picture	mfsd	585914	430	1	167	1	80	next	miss	0
+01	216	Picture	---fixation---	587248	0	1	2668	1	0	5000	other	0
+01	217	Picture	mnsi	590249	295	1	167	1	80	next	miss	0
+01	218	Picture	---fixation---	591917	0	1	2501	1	0	4000	other	0
+01	219	Picture	mf	594751	80	1	167	1	80	next	miss	0
+01	220	Picture	---fixation---	596085	0	1	1667	1	0	6000	other	0
+01	221	Picture	mfsi	598253	375	1	167	1	80	next	miss	0
+01	222	Picture	---fixation---	599420	0	1	1834	1	0	5000	other	0
+01	223	Picture	mfsi	601754	422	1	167	1	80	next	miss	0
+01	224	Picture	---fixation---	603088	0	1	1667	1	0	5000	other	0
+01	225	Picture	mfsd	605089	303	1	167	1	80	next	miss	0
+01	226	Picture	---fixation---	606590	0	1	1667	1	0	6000	other	0
+01	227	Picture	mnsi	608757	416	1	167	1	80	next	miss	0
+01	228	Picture	---fixation---	610091	0	1	2168	1	0	5000	other	0
+01	229	Picture	mfsd	612759	455	1	167	1	80	next	miss	0
+01	230	Picture	---fixation---	614093	0	1	1501	1	0	6000	other	0
+01	231	Picture	mfsd	616094	438	1	167	1	80	next	miss	0
+01	232	Picture	---fixation---	617261	0	1	1667	1	0	6000	other	0
+01	233	Picture	mn	619262	80	1	167	1	80	next	miss	0
+01	234	Picture	---fixation---	620596	0	1	1501	1	0	5000	other	0
+01	235	Picture	mf	622430	80	1	167	1	80	next	miss	0
+01	236	Picture	---fixation---	623764	0	1	2168	1	0	6000	other	0
+01	237	Picture	mfsi	626431	414	1	167	1	80	next	miss	0
+01	238	Picture	---fixation---	627432	0	1	1667	1	0	5000	other	0
+01	239	Picture	mn	629433	80	1	167	1	80	next	miss	0
+01	240	Picture	---fixation---	631100	0	1	2001	1	0	5000	other	0
+01	241	Picture	mfsd	633601	371	1	167	1	80	next	miss	0
+01	242	Picture	---fixation---	634935	0	1	2001	1	0	4000	other	0
+01	243	Picture	mfsd	637436	447	1	167	1	80	next	miss	0
+01	244	Picture	---fixation---	638770	0	1	1501	1	0	4000	other	0
+01	245	Picture	mnsi	640771	429	1	167	1	80	next	miss	0
+01	246	Picture	---fixation---	641771	0	1	2334	1	0	6000	other	0
+01	247	Picture	mfsi	644606	404	1	167	1	80	next	miss	0
+01	248	Picture	---fixation---	645773	0	1	1501	1	0	6000	other	0
+01	249	Picture	mf	647607	80	1	167	1	80	next	miss	0
+01	250	Picture	+++relax+++	649108	0	1	220260	1	0	next	other	0
+01	250	Response	3	869196	220088	0
+01	251	Picture	---fixation---	869367	0	1	15840	1	0	5000	other	0
+01	252	Picture	mn	885541	80	1	167	1	80	next	miss	0
+01	253	Picture	---fixation---	887041	0	1	2168	1	0	4000	other	0
+01	254	Picture	mnsi	889709	377	1	167	1	80	next	miss	0
+01	255	Picture	---fixation---	891043	0	1	2334	1	0	4000	other	0
+01	256	Picture	mnsd	893878	380	1	167	1	80	next	miss	0
+01	257	Picture	---fixation---	895211	0	1	1501	1	0	4000	other	0
+01	258	Picture	mnsd	897046	297	1	167	1	80	next	miss	0
+01	259	Picture	---fixation---	898380	0	1	1834	1	0	5000	other	0
+01	260	Picture	mnsi	900714	410	1	167	1	80	next	miss	0
+01	261	Picture	---fixation---	901714	0	1	1667	1	0	6000	other	0
+01	262	Picture	mnsd	903882	429	1	167	1	80	next	miss	0
+01	263	Picture	---fixation---	904882	0	1	1501	1	0	4000	other	0
+01	264	Picture	mf	906716	80	1	167	1	80	next	miss	0
+01	265	Picture	---fixation---	908050	0	1	1834	1	0	4000	other	0
+01	266	Picture	mfsi	910385	430	1	167	1	80	next	miss	0
+01	267	Picture	---fixation---	911385	0	1	2001	1	0	6000	other	0
+01	268	Picture	mnsi	913886	376	1	167	1	80	next	miss	0
+01	269	Picture	---fixation---	915053	0	1	2334	1	0	5000	other	0
+01	270	Picture	mf	917721	80	1	167	1	80	next	miss	0
+01	271	Picture	---fixation---	919388	0	1	2001	1	0	4000	other	0
+01	272	Picture	mfsi	921889	455	1	167	1	80	next	miss	0
+01	273	Picture	---fixation---	923057	0	1	2668	1	0	6000	other	0
+01	274	Picture	mfsd	926225	422	1	167	1	80	next	miss	0
+01	275	Picture	---fixation---	927559	0	1	1501	1	0	6000	other	0
+01	276	Picture	mf	929393	80	1	167	1	80	next	miss	0
+01	277	Picture	---fixation---	931060	0	1	1667	1	0	4000	other	0
+01	278	Picture	mf	933061	80	1	167	1	80	next	miss	0
+01	279	Picture	---fixation---	934728	0	1	1834	1	0	6000	other	0
+01	280	Picture	mnsi	937063	390	1	167	1	80	next	miss	0
+01	281	Picture	---fixation---	938063	0	1	2001	1	0	5000	other	0
+01	282	Picture	mn	940397	80	1	167	1	80	next	miss	0
+01	283	Picture	---fixation---	941898	0	1	1667	1	0	4000	other	0
+01	284	Picture	mn	943899	80	1	167	1	80	next	miss	0
+01	285	Picture	---fixation---	945399	0	1	1667	1	0	5000	other	0
+01	286	Picture	mnsi	947567	431	1	167	1	80	next	miss	0
+01	287	Picture	---fixation---	948567	0	1	1501	1	0	5000	other	0
+01	288	Picture	mn	950402	80	1	167	1	80	next	miss	0
+01	289	Picture	---fixation---	952069	0	1	1501	1	0	4000	other	0
+01	290	Picture	mnsd	954070	432	1	167	1	80	next	miss	0
+01	291	Picture	---fixation---	955404	0	1	1667	1	0	6000	other	0
+01	292	Picture	mn	957404	80	1	167	1	80	next	miss	0
+01	293	Picture	---fixation---	958738	0	1	2001	1	0	6000	other	0
+01	294	Picture	mfsi	961239	389	1	167	1	80	next	miss	0
+01	295	Picture	---fixation---	962240	0	1	1501	1	0	5000	other	0
+01	296	Picture	mfsd	964241	445	1	167	1	80	next	miss	0
+01	297	Picture	---fixation---	965575	0	1	1667	1	0	4000	other	0
+01	298	Picture	mfsi	967742	391	1	167	1	80	next	miss	0
+01	299	Picture	---fixation---	969076	0	1	2001	1	0	6000	other	0
+01	300	Picture	mn	971410	80	1	167	1	80	next	miss	0
+01	301	Picture	---fixation---	973078	0	1	1834	1	0	5000	other	0
+01	302	Picture	mnsd	975412	441	1	167	1	80	next	miss	0
+01	303	Picture	---fixation---	976579	0	1	2334	1	0	6000	other	0
+01	304	Picture	mnsd	979414	380	1	167	1	80	next	miss	0
+01	305	Picture	---fixation---	980581	0	1	2001	1	0	6000	other	0
+01	306	Picture	mnsd	983082	391	1	167	1	80	next	miss	0
+01	307	Picture	---fixation---	984249	0	1	2001	1	0	5000	other	0
+01	308	Picture	mn	986584	80	1	167	1	80	next	miss	0
+01	309	Picture	---fixation---	988084	0	1	1501	1	0	4000	other	0
+01	310	Picture	mfsi	990085	384	1	167	1	80	next	miss	0
+01	311	Picture	---fixation---	991085	0	1	1501	1	0	6000	other	0
+01	312	Picture	mfsd	993086	439	1	167	1	80	next	miss	0
+01	313	Picture	---fixation---	994087	0	1	1501	1	0	4000	other	0
+01	314	Picture	mfsi	996088	393	1	167	1	80	next	miss	0
+01	315	Picture	---fixation---	997088	0	1	1501	1	0	6000	other	0
+01	316	Picture	mfsi	999089	448	1	167	1	80	next	miss	0
+01	317	Picture	---fixation---	1000423	0	1	1834	1	0	6000	other	0
+01	318	Picture	mf	1002590	80	1	167	1	80	next	miss	0
+01	319	Picture	---fixation---	1004258	0	1	1501	1	0	5000	other	0
+01	320	Picture	mnsi	1006258	405	1	167	1	80	next	miss	0
+01	321	Picture	---fixation---	1007592	0	1	1501	1	0	6000	other	0
+01	322	Picture	mnsi	1009593	387	1	167	1	80	next	miss	0
+01	323	Picture	---fixation---	1010927	0	1	2168	1	0	4000	other	0
+01	324	Picture	mfsd	1013595	427	1	167	1	80	next	miss	0
+01	325	Picture	---fixation---	1014929	0	1	1667	1	0	6000	other	0
+01	326	Picture	mnsi	1017096	373	1	167	1	80	next	miss	0
+01	327	Picture	---fixation---	1018097	0	1	2168	1	0	5000	other	0
+01	328	Picture	mn	1020598	80	1	167	1	80	next	miss	0
+01	329	Picture	---fixation---	1021932	0	1	2168	1	0	5000	other	0
+01	330	Picture	mf	1024433	80	1	167	1	80	next	miss	0
+01	331	Picture	---fixation---	1025767	0	1	2168	1	0	4000	other	0
+01	332	Picture	mfsi	1028435	435	1	167	1	80	next	miss	0
+01	333	Picture	---fixation---	1029768	0	1	1834	1	0	4000	other	0
+01	334	Picture	mn	1031936	80	1	167	1	80	next	miss	0
+01	335	Picture	---fixation---	1033603	0	1	1834	1	0	4000	other	0
+01	336	Picture	mn	1035771	80	1	167	1	80	next	miss	0
+01	337	Picture	---fixation---	1037438	0	1	1667	1	0	6000	other	0
+01	338	Picture	mn	1039439	80	1	167	1	80	next	miss	0
+01	339	Picture	---fixation---	1040940	0	1	2001	1	0	4000	other	0
+01	340	Picture	mnsd	1043441	406	1	167	1	80	next	miss	0
+01	341	Picture	---fixation---	1044775	0	1	1667	1	0	5000	other	0
+01	342	Picture	mfsi	1046942	454	1	167	1	80	next	miss	0
+01	343	Picture	---fixation---	1048276	0	1	1667	1	0	6000	other	0
+01	344	Picture	mf	1050277	80	1	167	1	80	next	miss	0
+01	345	Picture	---fixation---	1051944	0	1	2168	1	0	5000	other	0
+01	346	Picture	mnsi	1054612	403	1	167	1	80	next	miss	0
+01	347	Picture	---fixation---	1055946	0	1	2001	1	0	6000	other	0
+01	348	Picture	mfsi	1058447	378	1	167	1	80	next	miss	0
+01	349	Picture	---fixation---	1059781	0	1	1667	1	0	5000	other	0
+01	350	Picture	mf	1061782	80	1	167	1	80	next	miss	0
+01	351	Picture	---fixation---	1063283	0	1	2001	1	0	5000	other	0
+01	352	Picture	mnsi	1065784	400	1	167	1	80	next	miss	0
+01	353	Picture	---fixation---	1066784	0	1	1501	1	0	4000	other	0
+01	354	Picture	mfsi	1068618	288	1	167	1	80	next	miss	0
+01	355	Picture	---fixation---	1070119	0	1	1667	1	0	6000	other	0
+01	356	Picture	mf	1072120	80	1	167	1	80	next	miss	0
+01	357	Picture	---fixation---	1073787	0	1	2501	1	0	6000	other	0
+01	358	Picture	mnsd	1076788	433	1	167	1	80	next	miss	0
+01	359	Picture	---fixation---	1078122	0	1	2501	1	0	5000	other	0
+01	360	Picture	mf	1080957	80	1	167	1	80	next	miss	0
+01	361	Picture	---fixation---	1082624	0	1	2334	1	0	4000	other	0
+01	362	Picture	mf	1085292	80	1	167	1	80	next	miss	0
+01	363	Picture	---fixation---	1086793	0	1	2001	1	0	6000	other	0
+01	364	Picture	mnsd	1089294	443	1	167	1	80	next	miss	0
+01	365	Picture	---fixation---	1090294	0	1	1834	1	0	5000	other	0
+01	366	Picture	mfsi	1092628	426	1	167	1	80	next	miss	0
+01	367	Picture	---fixation---	1093629	0	1	2001	1	0	4000	other	0
+01	368	Picture	mn	1095963	80	1	167	1	80	next	miss	0
+01	369	Picture	---fixation---	1097297	0	1	1501	1	0	4000	other	0
+01	370	Picture	mnsd	1099298	390	1	167	1	80	next	miss	0
+01	371	Picture	+++relax+++	1100465	0	1	54356	1	0	next	other	0
+01	371	Response	3	1154637	54172	0
+01	372	Picture	---fixation---	1154821	0	1	1834	1	0	5000	other	0
+01	373	Picture	mnsi	1157156	445	1	167	1	80	next	miss	0
+01	374	Picture	---fixation---	1158490	0	1	1501	1	0	6000	other	0
+01	375	Picture	mfsd	1160490	427	1	167	1	80	next	miss	0
+01	376	Picture	---fixation---	1161491	0	1	1667	1	0	4000	other	0
+01	377	Picture	mfsi	1163658	446	1	167	1	80	next	miss	0
+01	378	Picture	---fixation---	1164992	0	1	1667	1	0	5000	other	0
+01	379	Picture	mnsi	1167160	392	1	167	1	80	next	miss	0
+01	380	Picture	---fixation---	1168327	0	1	1667	1	0	5000	other	0
+01	381	Picture	mfsd	1170495	374	1	167	1	80	next	miss	0
+01	382	Picture	---fixation---	1171829	0	1	2168	1	0	5000	other	0
+01	383	Picture	mnsd	1174496	414	1	167	1	80	next	miss	0
+01	384	Picture	---fixation---	1175497	0	1	1667	1	0	6000	other	0
+01	385	Picture	mnsi	1177664	433	1	167	1	80	next	miss	0
+01	386	Picture	---fixation---	1178665	0	1	2334	1	0	4000	other	0
+01	387	Picture	mnsd	1181499	408	1	167	1	80	next	miss	0
+01	388	Picture	---fixation---	1182833	0	1	1834	1	0	6000	other	0
+01	389	Picture	mn	1185001	80	1	167	1	80	next	miss	0
+01	390	Picture	---fixation---	1186668	0	1	1667	1	0	6000	other	0
+01	391	Picture	mnsi	1188836	430	1	167	1	80	next	miss	0
+01	392	Picture	---fixation---	1190170	0	1	2334	1	0	5000	other	0
+01	393	Picture	mfsd	1193004	433	1	167	1	80	next	miss	0
+01	394	Picture	---fixation---	1194171	0	1	2001	1	0	5000	other	0
+01	395	Picture	mfsi	1196672	444	1	167	1	80	next	miss	0
+01	396	Picture	---fixation---	1198006	0	1	1667	1	0	4000	other	0
+01	397	Picture	mf	1200007	80	1	167	1	80	next	miss	0
+01	398	Picture	---fixation---	1201508	0	1	1834	1	0	4000	other	0
+01	399	Picture	mnsd	1203842	401	1	167	1	80	next	miss	0
+01	400	Picture	---fixation---	1205176	0	1	2168	1	0	6000	other	0
+01	401	Picture	mfsi	1207844	441	1	167	1	80	next	miss	0
+01	402	Picture	---fixation---	1208844	0	1	1501	1	0	5000	other	0
+01	403	Picture	mf	1210678	80	1	167	1	80	next	miss	0
+01	404	Picture	---fixation---	1212179	0	1	1501	1	0	6000	other	0
+01	405	Picture	mfsi	1214180	377	1	167	1	80	next	miss	0
+01	406	Picture	---fixation---	1215514	0	1	1667	1	0	4000	other	0
+01	407	Picture	mfsi	1217681	424	1	167	1	80	next	miss	0
+01	408	Picture	---fixation---	1218682	0	1	2168	1	0	6000	other	0
+01	409	Picture	mfsd	1221349	435	1	167	1	80	next	miss	0
+01	410	Picture	---fixation---	1222517	0	1	2001	1	0	6000	other	0
+01	411	Picture	mf	1224851	80	1	167	1	80	next	miss	0
+01	412	Picture	---fixation---	1226518	0	1	1667	1	0	4000	other	0
+01	413	Picture	mfsi	1228686	457	1	167	1	80	next	miss	0
+01	414	Picture	---fixation---	1230020	0	1	2001	1	0	5000	other	0
+01	415	Picture	mnsi	1232521	432	1	167	1	80	next	miss	0
+01	416	Picture	---fixation---	1233855	0	1	2001	1	0	6000	other	0
+01	417	Picture	mfsd	1236356	407	1	167	1	80	next	miss	0
+01	418	Picture	---fixation---	1237690	0	1	2001	1	0	5000	other	0
+01	419	Picture	mfsi	1240191	381	1	167	1	80	next	miss	0
+01	420	Picture	---fixation---	1241525	0	1	2168	1	0	4000	other	0
+01	421	Picture	mnsi	1244192	421	1	167	1	80	next	miss	0
+01	422	Picture	---fixation---	1245526	0	1	2001	1	0	5000	other	0
+01	423	Picture	mfsd	1248027	396	1	167	1	80	next	miss	0
+01	424	Picture	---fixation---	1249028	0	1	1667	1	0	4000	other	0
+01	425	Picture	mnsd	1251195	415	1	167	1	80	next	miss	0
+01	426	Picture	---fixation---	1252363	0	1	1667	1	0	6000	other	0
+01	427	Picture	mnsi	1254530	397	1	167	1	80	next	miss	0
+01	428	Picture	---fixation---	1255697	0	1	2168	1	0	4000	other	0
+01	429	Picture	mnsd	1258365	372	1	167	1	80	next	miss	0
+01	430	Picture	---fixation---	1259532	0	1	2168	1	0	4000	other	0
+01	431	Picture	mn	1262033	80	1	167	1	80	next	miss	0
+01	432	Picture	---fixation---	1263701	0	1	1667	1	0	4000	other	0
+01	433	Picture	mfsi	1265868	459	1	167	1	80	next	miss	0
+01	434	Picture	---fixation---	1266869	0	1	1667	1	0	5000	other	0
+01	435	Picture	mf	1268870	80	1	167	1	80	next	miss	0
+01	436	Picture	---fixation---	1270537	0	1	1667	1	0	4000	other	0
+01	437	Picture	mnsi	1272705	387	1	167	1	80	next	miss	0
+01	438	Picture	---fixation---	1273705	0	1	1667	1	0	4000	other	0
+01	439	Picture	mnsi	1275873	406	1	167	1	80	next	miss	0
+01	440	Picture	---fixation---	1277206	0	1	1667	1	0	6000	other	0
+01	441	Picture	mfsd	1279374	453	1	167	1	80	next	miss	0
+01	442	Picture	---fixation---	1280708	0	1	1667	1	0	5000	other	0
+01	443	Picture	mf	1282709	80	1	167	1	80	next	miss	0
+01	444	Picture	---fixation---	1284043	0	1	8337	1	0	5000	other	0
+01	445	Picture	mf	1292713	80	1	167	1	80	next	miss	0
+01	446	Picture	---fixation---	1294547	0	1	2835	1	0	4000	other	0
+01	447	Picture	mnsi	1297882	371	1	167	1	80	next	miss	0
+01	448	Picture	---fixation---	1299216	0	1	2334	1	0	5000	other	0
+01	449	Picture	mfsd	1302050	374	1	167	1	80	next	miss	0
+01	450	Picture	---fixation---	1303217	0	1	1667	1	0	4000	other	0
+01	451	Picture	mf	1305218	80	1	167	1	80	next	miss	0
+01	452	Picture	---fixation---	1306552	0	1	2001	1	0	5000	other	0
+01	453	Picture	mnsi	1308887	302	1	167	1	80	next	miss	0
+01	454	Picture	---fixation---	1310387	0	1	1501	1	0	4000	other	0
+01	455	Picture	mfsd	1312388	451	1	167	1	80	next	miss	0
+01	456	Picture	---fixation---	1313555	0	1	1667	1	0	5000	other	0
+01	457	Picture	mnsd	1315723	434	1	167	1	80	next	miss	0
+01	458	Picture	---fixation---	1316890	0	1	1667	1	0	5000	other	0
+01	459	Picture	mn	1318891	80	1	167	1	80	next	miss	0
+01	460	Picture	---fixation---	1320558	0	1	1834	1	0	5000	other	0
+01	461	Picture	mf	1322726	80	1	167	1	80	next	miss	0
+01	462	Picture	---fixation---	1324393	0	1	2168	1	0	6000	other	0
+01	463	Picture	mfsd	1327061	394	1	167	1	80	next	miss	0
+01	464	Picture	---fixation---	1328061	0	1	1834	1	0	5000	other	0
+01	465	Picture	mf	1330229	80	1	167	1	80	next	miss	0
+01	466	Picture	---fixation---	1331563	0	1	1667	1	0	6000	other	0
+01	467	Picture	mf	1333564	80	1	167	1	80	next	miss	0
+01	468	Picture	---fixation---	1335064	0	1	1834	1	0	6000	other	0
+01	469	Picture	mnsd	1337399	370	1	167	1	80	next	miss	0
+01	470	Picture	---fixation---	1338732	0	1	1667	1	0	4000	other	0
+01	471	Picture	mfsi	1340900	417	1	167	1	80	next	miss	0
+01	472	Picture	---fixation---	1342067	0	1	2001	1	0	5000	other	0
+01	473	Picture	mn	1344402	80	1	167	1	80	next	miss	0
+01	474	Picture	---fixation---	1345902	0	1	2334	1	0	6000	other	0
+01	475	Picture	mnsd	1348737	432	1	167	1	80	next	miss	0
+01	476	Picture	---fixation---	1350071	0	1	1501	1	0	4000	other	0
+01	477	Picture	mnsd	1352071	414	1	167	1	80	next	miss	0
+01	478	Picture	---fixation---	1353405	0	1	1667	1	0	6000	other	0
+01	479	Picture	mnsd	1355406	295	1	167	1	80	next	miss	0
+01	480	Picture	---fixation---	1356740	0	1	1667	1	0	5000	other	0
+01	481	Picture	mnsi	1358908	444	1	167	1	80	next	miss	0
+01	482	Picture	---fixation---	1360242	0	1	2001	1	0	5000	other	0
+01	483	Picture	mfsd	1362743	419	1	167	1	80	next	miss	0
+01	484	Picture	---fixation---	1364077	0	1	2001	1	0	4000	other	0
+01	485	Picture	mfsi	1366578	393	1	167	1	80	next	miss	0
+01	486	Picture	---fixation---	1367911	0	1	2001	1	0	4000	other	0
+01	487	Picture	mfsi	1370413	368	1	167	1	80	next	miss	0
+01	488	Picture	---fixation---	1371413	0	1	2501	1	0	6000	other	0
+01	489	Picture	mfsi	1374414	408	1	167	1	80	next	miss	0
+01	490	Picture	---fixation---	1375748	0	1	2167	1	0	5000	other	0
+01	491	Picture	mfsd	1378416	448	1	167	1	80	next	miss	0
+01	492	Picture	+++relax+++	1379583	0	1	22676	1	0	next	other	0
+01	492	Response	3	1402158	22574	0
+01	493	Picture	---fixation---	1402259	0	1	1834	1	0	6000	other	0
+01	494	Picture	mnsi	1404594	416	1	167	1	80	next	miss	0
+01	495	Picture	---fixation---	1405928	0	1	1501	1	0	6000	other	0
+01	496	Picture	mfsd	1407928	398	1	167	1	80	next	miss	0
+01	497	Picture	---fixation---	1409262	0	1	1501	1	0	6000	other	0
+01	498	Picture	mnsi	1411263	380	1	167	1	80	next	miss	0
+01	499	Picture	---fixation---	1412264	0	1	1501	1	0	6000	other	0
+01	500	Picture	mn	1414098	80	1	167	1	80	next	miss	0
+01	501	Picture	---fixation---	1415765	0	1	1834	1	0	5000	other	0
+01	502	Picture	mnsd	1418099	410	1	167	1	80	next	miss	0
+01	503	Picture	---fixation---	1419267	0	1	2168	1	0	5000	other	0
+01	504	Picture	mfsi	1421934	385	1	167	1	80	next	miss	0
+01	505	Picture	---fixation---	1423268	0	1	2168	1	0	4000	other	0
+01	506	Picture	mf	1425769	80	1	167	1	80	next	miss	0
+01	507	Picture	---fixation---	1427437	0	1	1834	1	0	5000	other	0
+01	508	Picture	mnsi	1429771	399	1	167	1	80	next	miss	0
+01	509	Picture	---fixation---	1430771	0	1	1667	1	0	6000	other	0
+01	510	Picture	mf	1432772	80	1	167	1	80	next	miss	0
+01	511	Picture	---fixation---	1434273	0	1	2168	1	0	5000	other	0
+01	512	Picture	mfsd	1436774	291	1	167	1	80	next	miss	0
+01	513	Picture	---fixation---	1438275	0	1	1667	1	0	6000	other	0
+01	514	Picture	mn	1440275	80	1	167	1	80	next	miss	0
+01	515	Picture	---fixation---	1441609	0	1	1501	1	0	6000	other	0
+01	516	Picture	mfsd	1443610	423	1	167	1	80	next	miss	0
+01	517	Picture	---fixation---	1444611	0	1	1667	1	0	4000	other	0
+01	518	Picture	mnsi	1446778	441	1	167	1	80	next	miss	0
+01	519	Picture	---fixation---	1447779	0	1	1834	1	0	5000	other	0
+01	520	Picture	mfsd	1450113	424	1	167	1	80	next	miss	0
+01	521	Picture	---fixation---	1451447	0	1	2168	1	0	5000	other	0
+01	522	Picture	mnsi	1453948	297	1	167	1	80	next	miss	0
+01	523	Picture	---fixation---	1455449	0	1	2168	1	0	5000	other	0
+01	524	Picture	mnsd	1458116	402	1	333	1	80	next	miss	0
+01	525	Picture	---fixation---	1459284	0	1	1667	1	0	5000	other	0
+01	526	Picture	mn	1461284	80	1	167	1	80	next	miss	0
+01	527	Picture	---fixation---	1462952	0	1	2501	1	0	4000	other	0
+01	528	Picture	mnsd	1465953	416	1	333	1	80	next	miss	0
+01	529	Picture	---fixation---	1467287	0	1	1667	1	0	4000	other	0
+01	530	Picture	mf	1469288	80	1	167	1	80	next	miss	0
+01	531	Picture	---fixation---	1470955	0	1	2668	1	0	4000	other	0
+01	532	Picture	mnsi	1473956	292	1	167	1	80	next	miss	0
+01	533	Picture	---fixation---	1475457	0	1	2334	1	0	5000	other	0
+01	534	Picture	mfsd	1478125	296	1	167	1	80	next	miss	0
+01	535	Picture	---fixation---	1479292	0	1	2001	1	0	5000	other	0
+01	536	Picture	mnsi	1481793	408	1	167	1	80	next	miss	0
+01	537	Picture	---fixation---	1483127	0	1	2168	1	0	4000	other	0
+01	538	Picture	mnsi	1485795	448	1	167	1	80	next	miss	0
+01	539	Picture	---fixation---	1487129	0	1	2168	1	0	4000	other	0
+01	540	Picture	mfsd	1489796	386	1	167	1	80	next	miss	0
+01	541	Picture	---fixation---	1490797	0	1	1667	1	0	5000	other	0
+01	542	Picture	mn	1492798	80	1	167	1	80	next	miss	0
+01	543	Picture	---fixation---	1494298	0	1	2168	1	0	5000	other	0
+01	544	Picture	mf	1496799	80	1	167	1	80	next	miss	0
+01	545	Picture	---fixation---	1498467	0	1	1667	1	0	5000	other	0
+01	546	Picture	mn	1500468	80	1	167	1	80	next	miss	0
+01	547	Picture	---fixation---	1501968	0	1	1667	1	0	6000	other	0
+01	548	Picture	mf	1503969	80	1	167	1	80	next	miss	0
+01	549	Picture	---fixation---	1505303	0	1	1667	1	0	5000	other	0
+01	550	Picture	mfsd	1507471	384	1	167	1	80	next	miss	0
+01	551	Picture	---fixation---	1508804	0	1	2168	1	0	5000	other	0
+01	552	Picture	mf	1511305	80	1	167	1	80	next	miss	0
+01	553	Picture	---fixation---	1512973	0	1	1667	1	0	4000	other	0
+01	554	Picture	mf	1514974	80	1	167	1	80	next	miss	0
+01	555	Picture	---fixation---	1516474	0	1	1667	1	0	5000	other	0
+01	556	Picture	mf	1518475	80	1	167	1	80	next	miss	0
+01	557	Picture	---fixation---	1520143	0	1	2001	1	0	4000	other	0
+01	558	Picture	mfsd	1522644	421	1	167	1	80	next	miss	0
+01	559	Picture	---fixation---	1523811	0	1	1834	1	0	4000	other	0
+01	560	Picture	mn	1525978	80	1	167	1	80	next	miss	0
+01	561	Picture	---fixation---	1527646	0	1	1834	1	0	6000	other	0
+01	562	Picture	mf	1529813	80	1	167	1	80	next	miss	0
+01	563	Picture	---fixation---	1531481	0	1	2334	1	0	5000	other	0
+01	564	Picture	mnsd	1534315	410	1	167	1	80	next	miss	0
+01	565	Picture	---fixation---	1535482	0	1	2168	1	0	5000	other	0
+01	566	Picture	mf	1537983	80	1	167	1	80	next	miss	0
+01	567	Picture	---fixation---	1539651	0	1	1667	1	0	6000	other	0
+01	568	Picture	mn	1541652	80	1	167	1	80	next	miss	0
+01	569	Picture	---fixation---	1542986	0	1	2168	1	0	5000	other	0
+01	570	Picture	mnsd	1545653	370	1	167	1	80	next	miss	0
+01	571	Picture	---fixation---	1546820	0	1	2168	1	0	4000	other	0
+01	572	Picture	mf	1549322	80	1	167	1	80	next	miss	0
+01	573	Picture	---fixation---	1550822	0	1	1667	1	0	4000	other	0
+01	574	Picture	mfsi	1552990	392	1	167	1	80	next	miss	0
+01	575	Picture	---fixation---	1554157	0	1	1667	1	0	6000	other	0
+01	576	Picture	mf	1556158	80	1	167	1	80	next	miss	0
+01	577	Picture	---fixation---	1557492	0	1	1667	1	0	4000	other	0
+01	578	Picture	mnsi	1559493	292	1	167	1	80	next	miss	0
+01	579	Picture	---fixation---	1560660	0	1	2501	1	0	5000	other	0
+01	580	Picture	mfsi	1563661	397	1	167	1	80	next	miss	0
+01	581	Picture	---fixation---	1564995	0	1	2001	1	0	6000	other	0
+01	582	Picture	mfsd	1567329	306	1	167	1	80	next	miss	0
+01	583	Picture	---fixation---	1568496	0	1	1834	1	0	6000	other	0
+01	584	Picture	mf	1570664	80	1	167	1	80	next	miss	0
+01	585	Picture	---fixation---	1572331	0	1	2001	1	0	5000	other	0
+01	586	Picture	mfsi	1574832	394	1	167	1	80	next	miss	0
+01	587	Picture	---fixation---	1576166	0	1	2334	1	0	4000	other	0
+01	588	Picture	mfsd	1579001	397	1	167	1	80	next	miss	0
+01	589	Picture	---fixation---	1580168	0	1	2001	1	0	6000	other	0
+01	590	Picture	mfsi	1582669	408	1	167	1	80	next	miss	0
+01	591	Picture	---fixation---	1583836	0	1	2001	1	0	4000	other	0
+01	592	Picture	mn	1586170	80	1	167	1	80	next	miss	0
+01	593	Picture	---fixation---	1587838	0	1	2001	1	0	4000	other	0
+01	594	Picture	mfsd	1590172	292	1	167	1	80	next	miss	0
+01	595	Picture	---fixation---	1591673	0	1	1667	1	0	6000	other	0
+01	596	Picture	mfsd	1593840	405	1	167	1	80	next	miss	0
+01	597	Picture	---fixation---	1595174	0	1	2168	1	0	4000	other	0
+01	598	Picture	mn	1597675	80	1	167	1	80	next	miss	0
+01	599	Picture	---fixation---	1599343	0	1	2334	1	0	5000	other	0
+01	600	Picture	mf	1602011	80	1	167	1	80	next	miss	0
+01	601	Picture	---fixation---	1603511	0	1	2001	1	0	4000	other	0
+01	602	Picture	mnsd	1606012	386	1	167	1	80	next	miss	0
+01	603	Picture	---fixation---	1607346	0	1	1667	1	0	4000	other	0
+01	604	Picture	mfsi	1609514	434	1	167	1	80	next	miss	0
+01	605	Picture	---fixation---	1610848	0	1	2501	1	0	5000	other	0
+01	606	Picture	mn	1613682	80	1	167	1	80	next	miss	0
+01	607	Picture	---fixation---	1615183	0	1	2168	1	0	4000	other	0
+01	608	Picture	mfsd	1617851	440	1	167	1	80	next	miss	0
+01	609	Picture	---fixation---	1619184	0	1	1667	1	0	4000	other	0
+01	610	Picture	mnsd	1621352	386	1	167	1	80	next	miss	0
+01	611	Picture	---fixation---	1622686	0	1	2001	1	0	4000	other	0
+01	612	Picture	mn	1625020	80	1	167	1	80	next	miss	0
+01	613	Picture	+++relax+++	1626521	0	1	23843	1	0	next	other	0
+01	613	Response	3	1650238	23717	0
+01	614	Picture	---fixation---	1650364	0	1	1834	1	0	6000	other	0
+01	615	Picture	mf	1652532	80	1	167	1	80	next	miss	0
+01	616	Picture	---fixation---	1653866	0	1	1667	1	0	5000	other	0
+01	617	Picture	mnsd	1656033	426	1	167	1	80	next	miss	0
+01	618	Picture	---fixation---	1657201	0	1	1667	1	0	5000	other	0
+01	619	Picture	mfsi	1659368	409	1	167	1	80	next	miss	0
+01	620	Picture	---fixation---	1660702	0	1	1667	1	0	4000	other	0
+01	621	Picture	mf	1662703	80	1	167	1	80	next	miss	0
+01	622	Picture	---fixation---	1664370	0	1	1667	1	0	4000	other	0
+01	623	Picture	mfsd	1666371	300	1	167	1	80	next	miss	0
+01	624	Picture	---fixation---	1667705	0	1	2001	1	0	6000	other	0
+01	625	Picture	mfsi	1670206	377	1	167	1	80	next	miss	0
+01	626	Picture	---fixation---	1671373	0	1	1667	1	0	4000	other	0
+01	627	Picture	mn	1673374	80	1	167	1	80	next	miss	0
+01	628	Picture	---fixation---	1675041	0	1	1667	1	0	5000	other	0
+01	629	Picture	mf	1677042	80	1	167	1	80	next	miss	0
+01	630	Picture	---fixation---	1678710	0	1	2501	1	0	5000	other	0
+01	631	Picture	mnsi	1681711	402	1	167	1	80	next	miss	0
+01	632	Picture	---fixation---	1683045	0	1	2001	1	0	6000	other	0
+01	633	Picture	mnsd	1685546	377	1	167	1	80	next	miss	0
+01	634	Picture	---fixation---	1686880	0	1	2001	1	0	4000	other	0
+01	635	Picture	mfsd	1689381	453	1	167	1	80	next	miss	0
+01	636	Picture	---fixation---	1690715	0	1	2001	1	0	6000	other	0
+01	637	Picture	mnsi	1693216	428	1	167	1	80	next	miss	0
+01	638	Picture	---fixation---	1694383	0	1	2168	1	0	6000	other	0
+01	639	Picture	mnsi	1697051	402	1	167	1	80	next	miss	0
+01	640	Picture	---fixation---	1698218	0	1	2168	1	0	5000	other	0
+01	641	Picture	mfsd	1700886	377	1	167	1	80	next	miss	0
+01	642	Picture	---fixation---	1702220	0	1	1667	1	0	4000	other	0
+01	643	Picture	mfsi	1704387	424	1	167	1	80	next	miss	0
+01	644	Picture	---fixation---	1705554	0	1	1667	1	0	6000	other	0
+01	645	Picture	mn	1707555	80	1	167	1	80	next	miss	0
+01	646	Picture	---fixation---	1708889	0	1	2168	1	0	5000	other	0
+01	647	Picture	mnsd	1711557	381	1	167	1	80	next	miss	0
+01	648	Picture	---fixation---	1712891	0	1	1667	1	0	4000	other	0
+01	649	Picture	mnsd	1715058	429	1	167	1	80	next	miss	0
+01	650	Picture	---fixation---	1716392	0	1	1667	1	0	5000	other	0
+01	651	Picture	mn	1718393	80	1	167	1	80	next	miss	0
+01	652	Picture	---fixation---	1719727	0	1	1834	1	0	6000	other	0
+01	653	Picture	mnsi	1722061	422	1	167	1	80	next	miss	0
+01	654	Picture	---fixation---	1723395	0	1	1667	1	0	6000	other	0
+01	655	Picture	mn	1725396	80	1	167	1	80	next	miss	0
+01	656	Picture	---fixation---	1726897	0	1	1834	1	0	5000	other	0
+01	657	Picture	mnsd	1729231	379	1	167	1	80	next	miss	0
+01	658	Picture	---fixation---	1730398	0	1	2501	1	0	6000	other	0
+01	659	Picture	mnsi	1733399	383	1	167	1	80	next	miss	0
+01	660	Picture	---fixation---	1734733	0	1	2168	1	0	4000	other	0
+01	661	Picture	mfsd	1737401	422	1	167	1	80	next	miss	0
+01	662	Picture	---fixation---	1738735	0	1	1834	1	0	4000	other	0
+01	663	Picture	mnsi	1741069	433	1	167	1	80	next	miss	0
+01	664	Picture	---fixation---	1742070	0	1	1667	1	0	5000	other	0
+01	665	Picture	mfsi	1744237	452	1	167	1	80	next	miss	0
+01	666	Picture	---fixation---	1745238	0	1	2001	1	0	6000	other	0
+01	667	Picture	mfsd	1747739	398	1	167	1	80	next	miss	0
+01	668	Picture	---fixation---	1748739	0	1	2334	1	0	6000	other	0
+01	669	Picture	mnsi	1751574	373	1	167	1	80	next	miss	0
+01	670	Picture	---fixation---	1752908	0	1	1667	1	0	4000	other	0
+01	671	Picture	mfsi	1755075	420	1	167	1	80	next	miss	0
+01	672	Picture	---fixation---	1756242	0	1	1667	1	0	6000	other	0
+01	673	Picture	mf	1758243	80	1	167	1	80	next	miss	0
+01	674	Picture	---fixation---	1759911	0	1	2001	1	0	4000	other	0
+01	675	Picture	mnsd	1762412	442	1	167	1	80	next	miss	0
+01	676	Picture	---fixation---	1763746	0	1	2168	1	0	4000	other	0
+01	677	Picture	mnsi	1766413	381	1	167	1	80	next	miss	0
+01	678	Picture	---fixation---	1767581	0	1	2668	1	0	4000	other	0
+01	679	Picture	mnsd	1770749	449	1	167	1	80	next	miss	0
+01	680	Picture	---fixation---	1772082	0	1	1667	1	0	5000	other	0
+01	681	Picture	mnsd	1774250	395	1	167	1	80	next	miss	0
+01	682	Picture	---fixation---	1775584	0	1	1667	1	0	6000	other	0
+01	683	Picture	mn	1777585	80	1	167	1	80	next	miss	0
+01	684	Picture	---fixation---	1779252	0	1	26511	1	0	6000	other	0
+01	685	Picture	mnsi	1806264	409	1	167	1	80	next	miss	0

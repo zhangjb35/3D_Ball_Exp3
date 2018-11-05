@@ -68,11 +68,11 @@ prac_trial_list_A.append(prac_trial_list_B);
 int count_relax = 0; # 刺激呈现次数计数器
 
 # 练习时计数器
-int p_count_relax_limit = 10; # 休息条件 practice part
+int p_count_relax_limit = parameter_manager.get_int("p_count_relax_limit"); # 休息条件 practice part
 int p_count_show_relax = 0; # 更新 relax 进度提醒信息
 
 # 正式实验时计数器
-int count_relax_limit = 10; # 休息条件
+int count_relax_limit = parameter_manager.get_int("count_relax_limit"); # 休息条件
 int count_show_relax = 0; # 更新 relax 进度提醒信息
 ################################################################################################
 #
@@ -185,7 +185,7 @@ end;
 #                                   被试品控  
 #                                    
 ################################################################################################
-double pc_limit = 0.01; # 目标正确率
+double pc_limit = parameter_manager.get_double("PC_limit"); # 目标正确率
 
 double pc = 0.0; # 初始正确率
 
