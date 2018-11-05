@@ -160,7 +160,39 @@ include "./function.pcl";
 	show_this(code); 根据控制数组选择性呈现刺激
 	relax_check(); 检查是否需要休息
 */
-
+#------------------------- Show by Order: Practice ------------------
+count_relax = 0;
+trial_start_instruct.present();
+string new_block_type_caption = "Temp Caption";
+string new_task_remind_caption = "Temp Caption";
+loop int i = 1 until i > prac_times
+begin
+		if i==1 || i == prac_times/2 + 1 then
+				# new_block_type_caption = "任务 " + string(i);
+				new_block_type_caption = "内容";
+				if trial_list[i][1] == 1 then
+					new_task_remind_caption = new_task_remind_caption_motion;
+					text_remind_type.set_caption(new_block_type_caption, true);
+					text_remind_type.set_font_color(0,255,0);
+					text_remind_type.redraw();
+					text_remind_task.set_caption(new_task_remind_caption, true);
+					block_instruct_trial.present();
+					block_instruct_show_trial.present();
+				elseif trial_list[i][1] == 2 then
+					new_task_remind_caption = new_task_remind_caption_sound;
+					text_remind_type.set_caption(new_block_type_caption, true);
+					text_remind_type.set_font_color(0,255,0);
+					text_remind_type.redraw();
+					text_remind_task.set_caption(new_task_remind_caption, true);
+					block_instruct_trial.present();
+				end;
+		end;
+	show_this(i, prac_trial_list_A);
+	if mod(i,TRIAL_TOTAL) == 0 then
+		trial_entire_end_instruct.present();
+	end;
+	i = i + 1;
+end;
 #------------------------- Show by Order: Formal ------------------
 count_relax = 0;
 trial_start_instruct.present();
@@ -188,7 +220,7 @@ begin
 			block_instruct_trial.present();
 		end;
 	end;
-	show_this(i);
+	show_this(i,trial_list);
 	if mod(i,TRIAL_TOTAL) == 0 then
 		trial_entire_end_instruct.present();
 	end;

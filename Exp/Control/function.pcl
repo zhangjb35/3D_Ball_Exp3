@@ -39,7 +39,7 @@ begin
 	end;
 end;
 #-------------------------- Show This --------------------------
-sub show_this(int this)
+sub show_this(int this, array < int,2 > trial_list_toshow)
 begin
 	# fixation
 	trial_fixation_event.set_duration(fix_duration[random(1,3)]);
@@ -49,10 +49,10 @@ begin
 	record(string(trial_mark));
 	trial_mark = trial_mark + 1;
 	
-	int block_type = trial_list[this][1];
-	int main_task_type = trial_list[this][2];
-	int irr_stim = trial_list[this][3];
-	int indirect_task_type = trial_list[this][4];
+	int block_type = trial_list_toshow[this][1];
+	int main_task_type = trial_list_toshow[this][2];
+	int irr_stim = trial_list_toshow[this][3];
+	int indirect_task_type = trial_list_toshow[this][4];
 	term.print_line("A = " + string(block_type) + ", B = " + string(main_task_type) + ", C = " + string(irr_stim) + ", D = " + string(indirect_task_type) + "\n");
 	record(string(block_type));
 	record(string(main_task_type));
