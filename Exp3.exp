@@ -85,7 +85,7 @@
 <sd>
 <val>
 <dat>
-<val>144</val>
+<val>60</val>
 </dat>
 <id>0</id>
 </val>
@@ -115,7 +115,7 @@
 </val>
 <val>
 <dat>
-<val>100</val>
+<val>1000</val>
 </dat>
 <id>5</id>
 </val>
@@ -627,10 +627,10 @@
 <idv>
 <device_type>3</device_type>
 <dx_device_type>19</dx_device_type>
-<ibn>J</ibn>
 <ibn>F</ibn>
-<ibn>Tab</ibn>
+<ibn>J</ibn>
 <ibn>Space</ibn>
+<ibn>Tab</ibn>
 <idn>Keyboard</idn>
 <index>0</index>
 <index>1</index>
@@ -640,10 +640,10 @@
 <label></label>
 <label></label>
 <label></label>
-<offset>36</offset>
 <offset>33</offset>
-<offset>15</offset>
+<offset>36</offset>
 <offset>57</offset>
+<offset>15</offset>
 </idv>
 <overrides></overrides>
 <sfn>all_scenarios</sfn>
@@ -736,7 +736,7 @@
 <attenuation>0</attenuation>
 <do_attenuation>1</do_attenuation>
 <do_volume>1</do_volume>
-<volume>0.1</volume>
+<volume>0.15</volume>
 </svl>
 <swp>1</swp>
 <text_encoding>utf8</text_encoding>

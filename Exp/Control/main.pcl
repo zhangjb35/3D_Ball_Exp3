@@ -68,11 +68,11 @@ term.print_line(prac_trial_list_A);
 int count_relax = 0; # 刺激呈现次数计数器
 
 # 练习时计数器
-double p_count_relax_limit = 10; # 休息条件 practice part
+int p_count_relax_limit = 10; # 休息条件 practice part
 int p_count_show_relax = 0; # 更新 relax 进度提醒信息
 
 # 正式实验时计数器
-double count_relax_limit = 10; # 休息条件
+int count_relax_limit = 10; # 休息条件
 int count_show_relax = 0; # 更新 relax 进度提醒信息
 ################################################################################################
 #
@@ -248,7 +248,7 @@ begin
 	# 正确率不达标，重新练习
 		prac_marker = 1;
 		pc = 0;
-		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)), true);
+		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)) + " %", true);
 		redo_trial.present();
 	end;
 end;

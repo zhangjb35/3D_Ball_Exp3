@@ -34,7 +34,7 @@ begin
 	if prac_marker == 1 then
 		term.print_line("count_relax = " + string(count_relax));
 		# 针对练习阶段
-		if count_relax == p_count_relax_limit then # 达到休息标准
+		if mod(count_relax,p_count_relax_limit)==0 then # 达到休息标准
 			if count_relax != prac_times/2 then # 不在换 block 休息
 				if count_relax != prac_times then # 不在最后一次休息	
 					p_count_show_relax = p_count_show_relax + 1;	
@@ -42,12 +42,11 @@ begin
 					trial_relax_instruct.present();	
 				end;
 			end;
-			count_relax = 0;
 		end;
 	elseif prac_marker == 0 then
 		term.print_line("count_relax = " + string(count_relax));
 		# 针对正式阶段
-		if count_relax == count_relax_limit then # 达到休息标准
+		if mod(count_relax,count_relax_limit) == 0 then # 达到休息标准
 			if count_relax != TRIAL_TOTAL/2 then # 不在换 block 休息
 				if count_relax != TRIAL_TOTAL then # 不在最后一次休息	
 					count_show_relax = count_show_relax + 1;	
@@ -55,7 +54,6 @@ begin
 					trial_relax_instruct.present();	
 				end;
 			end;
-			count_relax = 0;
 		end;
 	end;
 end;
@@ -100,6 +98,7 @@ begin
 		ball.rotate_mesh(0,0,90.0);
 		event_mfsd_s.set_stimulus(sound_decrease);
 		mfsd_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
@@ -119,6 +118,7 @@ begin
 		ball.rotate_mesh(0,0,90.0);
 		event_mfsi_s.set_stimulus(sound_increase);
 		mfsi_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
@@ -136,6 +136,7 @@ begin
 		record("ans_ver");
 		ball.rotate_mesh(0,0,90.0);
 		mf_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
@@ -156,6 +157,7 @@ begin
 		ball.rotate_mesh(0,0,90.0);
 		event_mnsd_s.set_stimulus(sound_decrease);
 		mnsd_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
@@ -175,6 +177,7 @@ begin
 		ball.rotate_mesh(0,0,90.0);
 		event_mnsi_s.set_stimulus(sound_increase);
 		mnsi_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
@@ -190,8 +193,9 @@ begin
 	elseif block_type == 1 && main_task_type == 2 && irr_stim == 3 && indirect_task_type == 2 then # ver
 		event_mn_m.set_target_button(ans_ver);
 		record("ans_ver");
-		ball.rotate_mesh(0,0,90);
+		ball.rotate_mesh(0,0,90.0);
 		mn_trial.present();
+		ball.rotate_mesh(0,0,-90.0);
 		record_acc_rt();
 		count_relax = count_relax + 1;
 		relax_check();
