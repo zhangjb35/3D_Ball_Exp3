@@ -211,7 +211,7 @@ trial {
 	trial_duration = forever;
 	trial_type = specific_response;
 	terminator_button = $start;
-	picture { text redo_txt; x = 0; y = 0; };
+	picture { text pass_txt; x = 0; y = 0; };
 	time = 0;
 } pass_trial;
 

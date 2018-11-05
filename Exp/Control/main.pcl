@@ -61,7 +61,7 @@ prac_trial_list_B.shuffle();
 prac_trial_list_A.append(prac_trial_list_B);
 
 # 检阅
-term.print_line(prac_trial_list_A);
+#term.print_line(prac_trial_list_A);
 
 #------------------------- 休息环节参数设定 --------------
 # 通用计数器
@@ -139,8 +139,8 @@ int ans_gapno = 0;
 string new_task_remind_caption_motion = "";
 string new_task_remind_caption_sound = "";
 	
-term.print_line("subj: " + subj);
-term.print_line("task_set: " + string(task_set));
+#term.print_line("subj: " + subj);
+#term.print_line("task_set: " + string(task_set));
 if task_set == 1 then
 	new_task_remind_caption_motion = "判断小球上纹理的朝向 \n\n 水平条纹 = 左手食指按键\n 垂直条纹 = 右手食指按键";
 	new_task_remind_caption_sound = "判断声音中有无间隔 \n\n 有间隔 = 左手食指按键\n 无间隔 = 右手食指按键";
@@ -185,7 +185,7 @@ end;
 #                                   被试品控  
 #                                    
 ################################################################################################
-double pc_limit = 0.80; # 目标正确率
+double pc_limit = 0.01; # 目标正确率
 
 double pc = 0.0; # 初始正确率
 
@@ -236,19 +236,22 @@ begin
 			end;
 		# Screen#4 练习开始
 		pc_r_get = show_this(i, prac_trial_list_A, prac_marker);
+		#term.print_line(string(pc_r_get));
 		pc = pc + pc_r_get;
 		i = i + 1;
 	end;
 	# Screen#5 练习结果
 	# 正确率达标，通过测试
-	if pc/prac_times >= pc_limit then
+	term.print_line(string(pc/double(prac_times)));
+	if pc/double(prac_times) >= pc_limit then
 		prac_marker = 0;
+		pass_txt.set_caption("练习通过！正确率：" + string(round(pc/prac_times*100,3)) + " %", true);
 		pass_trial.present();
 	else
 	# 正确率不达标，重新练习
 		prac_marker = 1;
+		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times*100,3)) + " %", true);
 		pc = 0;
-		redo_txt.set_caption("重新来过。正确率：" + string(round(pc/prac_times,3)) + " %", true);
 		redo_trial.present();
 	end;
 end;

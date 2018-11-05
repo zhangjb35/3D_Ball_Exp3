@@ -32,7 +32,7 @@ end;
 sub relax_check
 begin
 	if prac_marker == 1 then
-		term.print_line("count_relax = " + string(count_relax));
+		# term.print_line("count_relax = " + string(count_relax));
 		# 针对练习阶段
 		if mod(count_relax,p_count_relax_limit)==0 then # 达到休息标准
 			if count_relax != prac_times/2 then # 不在换 block 休息
@@ -44,7 +44,7 @@ begin
 			end;
 		end;
 	elseif prac_marker == 0 then
-		term.print_line("count_relax = " + string(count_relax));
+		# term.print_line("count_relax = " + string(count_relax));
 		# 针对正式阶段
 		if mod(count_relax,count_relax_limit) == 0 then # 达到休息标准
 			if count_relax != TRIAL_TOTAL/2 then # 不在换 block 休息
@@ -74,7 +74,7 @@ begin
 	int main_task_type = trial_list_toshow[this][2];
 	int irr_stim = trial_list_toshow[this][3];
 	int indirect_task_type = trial_list_toshow[this][4];
-	term.print_line("A = " + string(block_type) + ", B = " + string(main_task_type) + ", C = " + string(irr_stim) + ", D = " + string(indirect_task_type) + "\n");
+	# term.print_line("A = " + string(block_type) + ", B = " + string(main_task_type) + ", C = " + string(irr_stim) + ", D = " + string(indirect_task_type) + "\n");
 	record(string(block_type));
 	record(string(main_task_type));
 	record(string(irr_stim));
