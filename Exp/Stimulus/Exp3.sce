@@ -27,9 +27,9 @@ $back = 4;
 $refresh_rate = EXPARAM( "RefreshRate");
 
 #------------------------- 各刺激呈现时间 --------------------------
-$duration_fixation = 500;
-$duration_stimulus = 500;
-$duration_present = 2000;
+$duration_fixation = EXPARAM( "fixation_duration")500;
+$duration_stimulus = EXPARAM( "av_duration")500;
+$duration_present = EXPARAM( "exist_av_duration")2000;
 #------------------------- 三维小球位置信息 ------------------------
 $position_camera_z = -100; 
 $position_ball_z =  0;
